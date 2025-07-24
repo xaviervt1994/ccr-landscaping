@@ -288,7 +288,8 @@
         Our Work in Action
       </h2>
       <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Desktop Grid -->
+        <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="gallery-image rounded-lg overflow-hidden shadow-md">
             <img
               src="assets/IMG_6151.jpeg"
@@ -331,7 +332,7 @@
               class="w-full h-64 object-cover"
             />
           </div>
-          <div class="gallery-image rounded-lg overflow-hidden shadow-md sm:col-span-2 lg:col-span-1">
+          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
             <img
               src="assets/IMG_4532.jpeg"
               alt="Expert landscaping and yard care"
@@ -339,6 +340,95 @@
             />
           </div>
         </div>
+
+        <!-- Mobile Carousel -->
+        <div class="md:hidden relative">
+          <div class="overflow-x-auto">
+            <div id="gallery-carousel" class="flex gap-4 pb-4" style="scroll-snap-type: x mandatory;">
+              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+                <img
+                  src="assets/IMG_6151.jpeg"
+                  alt="Professional lawn care work by CCR Landscaping"
+                  class="w-full h-64 object-cover"
+                />
+              </div>
+              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+                <img
+                  src="assets/IMG_6150.jpeg"
+                  alt="Quality landscaping services in Austin"
+                  class="w-full h-64 object-cover"
+                />
+              </div>
+              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+                <img
+                  src="assets/IMG_6148.jpeg"
+                  alt="Expert lawn maintenance and care"
+                  class="w-full h-64 object-cover"
+                />
+              </div>
+              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+                <img
+                  src="assets/IMG_6147.jpeg"
+                  alt="Professional landscaping results"
+                  class="w-full h-64 object-cover"
+                />
+              </div>
+              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+                <img
+                  src="assets/IMG_6134.jpeg"
+                  alt="Precision lawn care and edging"
+                  class="w-full h-64 object-cover"
+                />
+              </div>
+              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+                <img
+                  src="assets/IMG_4539.jpeg"
+                  alt="Quality lawn mowing and maintenance"
+                  class="w-full h-64 object-cover"
+                />
+              </div>
+              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+                <img
+                  src="assets/IMG_4532.jpeg"
+                  alt="Expert landscaping and yard care"
+                  class="w-full h-64 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <!-- Navigation Buttons -->
+          <button 
+            id="prev-btn" 
+            class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-green-700 p-3 rounded-full shadow-lg transition-all z-10"
+            onclick="scrollGallery('left')"
+          >
+            ←
+          </button>
+          <button 
+            id="next-btn" 
+            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-green-700 p-3 rounded-full shadow-lg transition-all z-10"
+            onclick="scrollGallery('right')"
+          >
+            →
+          </button>
+          
+          <!-- Dots Indicator -->
+          <div class="flex justify-center mt-4 space-x-2">
+            <div id="dot-0" class="w-3 h-3 bg-green-700 rounded-full cursor-pointer" onclick="scrollToImage(0)"></div>
+            <div id="dot-1" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(1)"></div>
+            <div id="dot-2" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(2)"></div>
+            <div id="dot-3" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(3)"></div>
+            <div id="dot-4" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(4)"></div>
+            <div id="dot-5" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(5)"></div>
+            <div id="dot-6" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(6)"></div>
+          </div>
+          
+          <p class="text-center text-gray-500 text-sm mt-2">
+            Swipe left or right to see more photos
+          </p>
+        </div>
+
         <div class="text-center mt-8">
           <p class="text-gray-600 mb-4">
             See the difference professional care makes! Ready to transform your yard?
@@ -627,6 +717,59 @@
     </section>
 
     <script>
+      // Gallery carousel functionality
+      let currentImageIndex = 0;
+      const totalImages = 7;
+
+      function scrollGallery(direction) {
+        const carousel = document.getElementById('gallery-carousel');
+        const imageWidth = 320; // 80 * 4 (w-80 = 320px)
+        
+        if (direction === 'left') {
+          currentImageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : totalImages - 1;
+        } else {
+          currentImageIndex = currentImageIndex < totalImages - 1 ? currentImageIndex + 1 : 0;
+        }
+        
+        carousel.scrollTo({
+          left: currentImageIndex * imageWidth,
+          behavior: 'smooth'
+        });
+        
+        updateDots();
+      }
+
+      function scrollToImage(index) {
+        const carousel = document.getElementById('gallery-carousel');
+        const imageWidth = 320;
+        currentImageIndex = index;
+        
+        carousel.scrollTo({
+          left: currentImageIndex * imageWidth,
+          behavior: 'smooth'
+        });
+        
+        updateDots();
+      }
+
+      function updateDots() {
+        for (let i = 0; i < totalImages; i++) {
+          const dot = document.getElementById(`dot-${i}`);
+          if (i === currentImageIndex) {
+            dot.className = 'w-3 h-3 bg-green-700 rounded-full cursor-pointer';
+          } else {
+            dot.className = 'w-3 h-3 bg-gray-300 rounded-full cursor-pointer';
+          }
+        }
+      }
+
+      // Auto-scroll functionality (optional)
+      setInterval(() => {
+        if (window.innerWidth < 768) { // Only on mobile
+          scrollGallery('right');
+        }
+      }, 5000);
+
       // Simple form handling (you'll need to connect this to your backend)
       document.querySelector('form').addEventListener('submit', function(e) {
         e.preventDefault();
