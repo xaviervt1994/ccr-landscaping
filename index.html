@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CCR Landscaping - Professional Lawn Care in Austin, TX</title>
+    <meta name="description" content="Professional landscaping services in Austin, TX. Expert lawn mowing, edging, and bush care. Licensed & insured with 5-star service. Free quotes available.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,9 +44,39 @@
           opacity: 1;
         }
       }
+      .sticky-cta {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      .gallery-image {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .gallery-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+      @media (max-width: 768px) {
+        .sticky-cta {
+          bottom: 10px;
+          right: 10px;
+        }
+      }
     </style>
   </head>
   <body class="bg-white text-gray-800">
+    <!-- Sticky Call Button -->
+    <div class="sticky-cta">
+      <a
+        href="tel:+1-512-828-2664"
+        class="bg-green-700 text-white px-4 py-3 rounded-full text-sm font-bold hover:bg-green-800 transition-colors flex items-center shadow-lg"
+      >
+        📞 Call Now
+      </a>
+    </div>
+
     <!-- Hero Section -->
     <header
       class="hero-gradient text-white text-center py-16 relative overflow-hidden"
@@ -72,12 +103,20 @@
             >512-828-2664</a
           >
         </p>
-        <a
-          href="tel:+1-512-828-2664"
-          class="bg-white text-green-700 px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-50 transition-all pulse-button inline-block"
-        >
-          Get Free Quote
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+          <a
+            href="tel:+1-512-828-2664"
+            class="bg-white text-green-700 px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-50 transition-all pulse-button inline-block"
+          >
+            Get Free Quote
+          </a>
+          <a
+            href="#contact-form"
+            class="bg-green-800 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-900 transition-colors inline-block"
+          >
+            Request Quote Online
+          </a>
+        </div>
       </div>
     </header>
 
@@ -122,6 +161,14 @@
             <p class="text-gray-600">We know Austin's unique landscape needs</p>
           </div>
         </div>
+        <div class="mt-12">
+          <a
+            href="tel:+1-512-828-2664"
+            class="bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors"
+          >
+            Learn More About Our Services
+          </a>
+        </div>
       </div>
     </section>
 
@@ -148,11 +195,17 @@
               collection, and clean-up. We maintain the perfect height for your
               grass type and season.
             </p>
-            <ul class="text-left text-gray-600 space-y-2">
+            <ul class="text-left text-gray-600 space-y-2 mb-6">
               <li>• Pattern mowing for professional appearance</li>
               <li>• Grass clipping removal</li>
               <li>• Seasonal height adjustments</li>
             </ul>
+            <a
+              href="tel:+1-512-828-2664"
+              class="bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-green-800 transition-colors"
+            >
+              Get Quote
+            </a>
           </div>
 
           <div
@@ -171,11 +224,17 @@
               give your lawn that professionally maintained look that makes all
               the difference.
             </p>
-            <ul class="text-left text-gray-600 space-y-2">
+            <ul class="text-left text-gray-600 space-y-2 mb-6">
               <li>• Sidewalk and driveway edging</li>
               <li>• Flower bed definition</li>
               <li>• Tree ring maintenance</li>
             </ul>
+            <a
+              href="tel:+1-512-828-2664"
+              class="bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-green-800 transition-colors"
+            >
+              Get Quote
+            </a>
           </div>
 
           <div
@@ -194,11 +253,17 @@
               and debris removal to keep your landscaping healthy and beautiful
               year-round.
             </p>
-            <ul class="text-left text-gray-600 space-y-2">
+            <ul class="text-left text-gray-600 space-y-2 mb-6">
               <li>• Professional pruning and shaping</li>
               <li>• Deadheading and cleanup</li>
               <li>• Seasonal maintenance</li>
             </ul>
+            <a
+              href="tel:+1-512-828-2664"
+              class="bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-green-800 transition-colors"
+            >
+              Get Quote
+            </a>
           </div>
         </div>
 
@@ -220,42 +285,71 @@
     <!-- Gallery Section -->
     <section class="py-16 px-6">
       <h2 class="text-4xl font-bold text-center text-green-700 mb-12">
-        Our Work
+        Our Work in Action
       </h2>
       <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <div
-            class="bg-gray-200 h-64 rounded-lg shadow-md flex items-center justify-center"
-          >
-            <p class="text-gray-500 text-center">
-              <span class="block text-4xl mb-2">🌱</span>
-              Professional Mowing<br />
-              <small>Photo coming soon</small>
-            </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+            <img
+              src="assets/IMG_6151.jpeg"
+              alt="Professional lawn care work by CCR Landscaping"
+              class="w-full h-64 object-cover"
+            />
           </div>
-          <div
-            class="bg-gray-200 h-64 rounded-lg shadow-md flex items-center justify-center"
-          >
-            <p class="text-gray-500 text-center">
-              <span class="block text-4xl mb-2">✂️</span>
-              Precision Edging<br />
-              <small>Photo coming soon</small>
-            </p>
+          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+            <img
+              src="assets/IMG_6150.jpeg"
+              alt="Quality landscaping services in Austin"
+              class="w-full h-64 object-cover"
+            />
           </div>
-          <div
-            class="bg-gray-200 h-64 rounded-lg shadow-md flex items-center justify-center"
-          >
-            <p class="text-gray-500 text-center">
-              <span class="block text-4xl mb-2">🌿</span>
-              Bush Maintenance<br />
-              <small>Photo coming soon</small>
-            </p>
+          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+            <img
+              src="assets/IMG_6148.jpeg"
+              alt="Expert lawn maintenance and care"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+            <img
+              src="assets/IMG_6147.jpeg"
+              alt="Professional landscaping results"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+            <img
+              src="assets/IMG_6134.jpeg"
+              alt="Precision lawn care and edging"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+            <img
+              src="assets/IMG_4539.jpeg"
+              alt="Quality lawn mowing and maintenance"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+          <div class="gallery-image rounded-lg overflow-hidden shadow-md sm:col-span-2 lg:col-span-1">
+            <img
+              src="assets/IMG_4532.jpeg"
+              alt="Expert landscaping and yard care"
+              class="w-full h-64 object-cover"
+            />
           </div>
         </div>
-        <p class="text-center text-gray-600 mt-8">
-          Gallery photos coming soon! In the meantime, call us to see examples
-          of our recent work.
-        </p>
+        <div class="text-center mt-8">
+          <p class="text-gray-600 mb-4">
+            See the difference professional care makes! Ready to transform your yard?
+          </p>
+          <a
+            href="tel:+1-512-828-2664"
+            class="bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors"
+          >
+            Get Your Free Quote Today
+          </a>
+        </div>
       </div>
     </section>
 
@@ -271,11 +365,9 @@
               <span class="text-yellow-400">★★★★★</span>
             </div>
             <p class="text-gray-600 mb-4 italic">
-              "CCR Landscaping transformed our overgrown yard into something
-              we're proud of. Professional, reliable, and great attention to
-              detail!"
+              "Absolutely amazing lawn care service! 🤩🪴 From start to finish, he was professional, reliable, and exceeded my expectations. My yard has never looked better—perfectly trimmed, edged, and spotless after his 1st visit. He was on time, friendly, and pay attention to detail. Highly recommend to anyone looking for consistent, high-quality lawn care! Thank you again Christian 😃 I look forward to doing business with you. ✨"
             </p>
-            <p class="font-semibold text-green-700">- Sarah M., Cedar Park</p>
+            <p class="font-semibold text-green-700">- Jamecia B., Georgetown</p>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-md">
             <div class="flex mb-4">
@@ -287,6 +379,17 @@
             </p>
             <p class="font-semibold text-green-700">- Mike R., Round Rock</p>
           </div>
+        </div>
+        <div class="text-center mt-8">
+          <p class="text-gray-600 mb-4">
+            Join our satisfied customers! Experience the CCR difference.
+          </p>
+          <a
+            href="#contact-form"
+            class="bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors"
+          >
+            Get Started Today
+          </a>
         </div>
       </div>
     </section>
@@ -311,6 +414,149 @@
         <p class="text-gray-600 mt-6">
           Don't see your area? Give us a call - we may still be able to help!
         </p>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="bg-gray-50 py-16 px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
+          Request Your Free Quote
+        </h2>
+        <p class="text-center text-gray-600 mb-8">
+          Prefer to get in touch online? Fill out the form below and we'll get back to you within 24 hours!
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <form class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="(512) 555-0123"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Property Address *</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="123 Main St, Austin, TX"
+                />
+              </div>
+              <div>
+                <label for="services" class="block text-sm font-medium text-gray-700 mb-2">Services Needed</label>
+                <select
+                  id="services"
+                  name="services"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                >
+                  <option value="">Select services...</option>
+                  <option value="mowing">Lawn Mowing</option>
+                  <option value="edging">Precision Edging</option>
+                  <option value="bushes">Bush & Shrub Care</option>
+                  <option value="all">Complete Package</option>
+                  <option value="custom">Custom Services</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Additional Details</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="Tell us about your yard size, specific needs, or any questions..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors"
+              >
+                Request Free Quote
+              </button>
+            </form>
+          </div>
+          <div class="lg:pl-8">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+              <h3 class="text-2xl font-bold text-green-700 mb-6">Why Choose CCR?</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                    <span class="text-green-700 text-sm font-bold">✓</span>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800">24-Hour Response</h4>
+                    <p class="text-gray-600 text-sm">We respond to all quote requests within one business day</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                    <span class="text-green-700 text-sm font-bold">✓</span>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800">Free Estimates</h4>
+                    <p class="text-gray-600 text-sm">No obligation quotes with transparent pricing</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                    <span class="text-green-700 text-sm font-bold">✓</span>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800">Licensed & Insured</h4>
+                    <p class="text-gray-600 text-sm">Professional service with full coverage protection</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                    <span class="text-green-700 text-sm font-bold">✓</span>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800">Satisfaction Guaranteed</h4>
+                    <p class="text-gray-600 text-sm">We're not happy until you're completely satisfied</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 p-4 bg-green-50 rounded-lg">
+                <p class="text-center text-green-700 font-semibold">
+                  Prefer to call? We're here to help!
+                </p>
+                <p class="text-center text-2xl font-bold text-green-800 mt-2">
+                  📞 512-828-2664
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -378,6 +624,14 @@
           </p>
         </div>
       </div>
-    </footer>
+    </section>
+
+    <script>
+      // Simple form handling (you'll need to connect this to your backend)
+      document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your interest! We\'ll contact you within 24 hours. For immediate assistance, please call 512-828-2664.');
+      });
+    </script>
   </body>
 </html>
