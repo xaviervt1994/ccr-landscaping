@@ -3,88 +3,381 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CCR Landscaping</title>
+    <title>CCR Landscaping - Professional Lawn Care in Austin, TX</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <style>
       body {
         font-family: "Roboto", sans-serif;
       }
+      .hero-gradient {
+        background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+      .pulse-button {
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
   <body class="bg-white text-gray-800">
     <!-- Hero Section -->
-    <header class="bg-green-700 text-white text-center py-12">
-      <img
-        src="assets/CCR Landscaping Logo Design.png"
-        alt="CCR Landscaping Logo"
-        class="mx-auto w-60 mb-4"
-      />
-
-      <p class="mt-4 text-xl font-semibold">
-        Call or Text:
-        <a href="tel:+1-512-828-2664" class="underline">512-828-2664</a>
-      </p>
+    <header
+      class="hero-gradient text-white text-center py-16 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-black opacity-10"></div>
+      <div class="relative z-10">
+        <img
+          src="assets/CCR Landscaping Logo Design.png"
+          alt="CCR Landscaping Logo"
+          class="mx-auto w-60 mb-6 fade-in"
+        />
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">
+          Professional Landscaping Services
+        </h1>
+        <p class="text-xl mb-6 max-w-2xl mx-auto px-4 fade-in">
+          Transform your outdoor space with expert lawn care and landscaping
+          services in Austin, TX
+        </p>
+        <p class="text-2xl font-semibold mb-8 fade-in">
+          Call or Text:
+          <a
+            href="tel:+1-512-828-2664"
+            class="underline hover:text-green-200 transition-colors"
+            >512-828-2664</a
+          >
+        </p>
+        <a
+          href="tel:+1-512-828-2664"
+          class="bg-white text-green-700 px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-50 transition-all pulse-button inline-block"
+        >
+          Get Free Quote
+        </a>
+      </div>
     </header>
 
+    <!-- About Section -->
+    <section class="py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-green-700 mb-6">
+          About CCR Landscaping
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          We're a locally-owned landscaping company dedicated to keeping Austin
+          beautiful, one lawn at a time. With years of experience and a
+          commitment to quality, we take pride in transforming ordinary yards
+          into stunning outdoor spaces that you'll love coming home to.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div class="text-center">
+            <div
+              class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-green-700 text-2xl font-bold">✓</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Licensed & Insured</h3>
+            <p class="text-gray-600">Professional service you can trust</p>
+          </div>
+          <div class="text-center">
+            <div
+              class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-green-700 text-2xl font-bold">★</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">5-Star Service</h3>
+            <p class="text-gray-600">Committed to excellence in every job</p>
+          </div>
+          <div class="text-center">
+            <div
+              class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-green-700 text-2xl font-bold">🏠</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Local Experts</h3>
+            <p class="text-gray-600">We know Austin's unique landscape needs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Services Section -->
-    <section class="py-12 px-6 text-center">
-      <h2 class="text-3xl font-bold text-green-700 mb-4">Our Services</h2>
-      <ul class="text-lg space-y-2">
-        <li>✅ Mowing</li>
-        <li>✅ Edging</li>
-        <li>✅ Bush Cleaning</li>
-      </ul>
+    <section class="bg-gray-50 py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-green-700 mb-12">
+          Our Services
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-lg text-center"
+          >
+            <div
+              class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <span class="text-green-700 text-3xl">🌱</span>
+            </div>
+            <h3 class="text-2xl font-bold text-green-700 mb-4">
+              Professional Mowing
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Weekly or bi-weekly lawn mowing with precision cutting, grass
+              collection, and clean-up. We maintain the perfect height for your
+              grass type and season.
+            </p>
+            <ul class="text-left text-gray-600 space-y-2">
+              <li>• Pattern mowing for professional appearance</li>
+              <li>• Grass clipping removal</li>
+              <li>• Seasonal height adjustments</li>
+            </ul>
+          </div>
+
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-lg text-center"
+          >
+            <div
+              class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <span class="text-green-700 text-3xl">✂️</span>
+            </div>
+            <h3 class="text-2xl font-bold text-green-700 mb-4">
+              Precision Edging
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Clean, crisp edges along walkways, driveways, and flower beds that
+              give your lawn that professionally maintained look that makes all
+              the difference.
+            </p>
+            <ul class="text-left text-gray-600 space-y-2">
+              <li>• Sidewalk and driveway edging</li>
+              <li>• Flower bed definition</li>
+              <li>• Tree ring maintenance</li>
+            </ul>
+          </div>
+
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-lg text-center"
+          >
+            <div
+              class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <span class="text-green-700 text-3xl">🌿</span>
+            </div>
+            <h3 class="text-2xl font-bold text-green-700 mb-4">
+              Bush & Shrub Care
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Complete bush and shrub maintenance including pruning, shaping,
+              and debris removal to keep your landscaping healthy and beautiful
+              year-round.
+            </p>
+            <ul class="text-left text-gray-600 space-y-2">
+              <li>• Professional pruning and shaping</li>
+              <li>• Deadheading and cleanup</li>
+              <li>• Seasonal maintenance</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <p class="text-lg text-gray-600 mb-6">
+            Need a custom package? We're happy to create a service plan that
+            fits your needs and budget.
+          </p>
+          <a
+            href="tel:+1-512-828-2664"
+            class="bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors"
+          >
+            Discuss Your Needs
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Gallery Section -->
-    <section class="bg-gray-100 py-12 px-6">
-      <h2 class="text-3xl font-bold text-center text-green-700 mb-6">
-        Before & After
+    <section class="py-16 px-6">
+      <h2 class="text-4xl font-bold text-center text-green-700 mb-12">
+        Our Work
       </h2>
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto"
-      >
-        <img
-          src="images/lawn1.jpg"
-          alt="Lawn work photo"
-          class="rounded shadow-md"
-        />
-        <img
-          src="images/lawn2.jpg"
-          alt="Lawn work photo"
-          class="rounded shadow-md"
-        />
-        <img
-          src="images/lawn3.jpg"
-          alt="Lawn work photo"
-          class="rounded shadow-md"
-        />
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div
+            class="bg-gray-200 h-64 rounded-lg shadow-md flex items-center justify-center"
+          >
+            <p class="text-gray-500 text-center">
+              <span class="block text-4xl mb-2">🌱</span>
+              Professional Mowing<br />
+              <small>Photo coming soon</small>
+            </p>
+          </div>
+          <div
+            class="bg-gray-200 h-64 rounded-lg shadow-md flex items-center justify-center"
+          >
+            <p class="text-gray-500 text-center">
+              <span class="block text-4xl mb-2">✂️</span>
+              Precision Edging<br />
+              <small>Photo coming soon</small>
+            </p>
+          </div>
+          <div
+            class="bg-gray-200 h-64 rounded-lg shadow-md flex items-center justify-center"
+          >
+            <p class="text-gray-500 text-center">
+              <span class="block text-4xl mb-2">🌿</span>
+              Bush Maintenance<br />
+              <small>Photo coming soon</small>
+            </p>
+          </div>
+        </div>
+        <p class="text-center text-gray-600 mt-8">
+          Gallery photos coming soon! In the meantime, call us to see examples
+          of our recent work.
+        </p>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-green-50 py-16 px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-green-700 mb-12">
+          What Our Customers Say
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <p class="text-gray-600 mb-4 italic">
+              "CCR Landscaping transformed our overgrown yard into something
+              we're proud of. Professional, reliable, and great attention to
+              detail!"
+            </p>
+            <p class="font-semibold text-green-700">- Sarah M., Cedar Park</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <p class="text-gray-600 mb-4 italic">
+              "Reliable service every week. They show up when scheduled and do
+              excellent work. Highly recommend for anyone in the Austin area!"
+            </p>
+            <p class="font-semibold text-green-700">- Mike R., Round Rock</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-green-700 mb-8">Service Areas</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          We proudly serve Austin and the surrounding communities:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-700">
+          <div class="bg-gray-50 p-4 rounded-lg">Austin</div>
+          <div class="bg-gray-50 p-4 rounded-lg">Cedar Park</div>
+          <div class="bg-gray-50 p-4 rounded-lg">Round Rock</div>
+          <div class="bg-gray-50 p-4 rounded-lg">Pflugerville</div>
+          <div class="bg-gray-50 p-4 rounded-lg">Lakeway</div>
+          <div class="bg-gray-50 p-4 rounded-lg">Bee Cave</div>
+          <div class="bg-gray-50 p-4 rounded-lg">Leander</div>
+          <div class="bg-gray-50 p-4 rounded-lg">Georgetown</div>
+        </div>
+        <p class="text-gray-600 mt-6">
+          Don't see your area? Give us a call - we may still be able to help!
+        </p>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="py-12 px-6 text-center">
-      <h2 class="text-3xl font-bold text-green-700 mb-4">Get in Touch</h2>
-      <p class="text-lg mb-2">Serving: Austin, TX and surrounding areas</p>
-      <p class="text-lg mb-6">
-        Reach out for a free quote or to book a service.
-      </p>
-      <a
-        href="tel:+1-512-828-2664"
-        class="bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition"
-        >Call Now</a
-      >
+    <section class="bg-green-700 text-white py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+        <p class="text-xl mb-8">
+          Get your free, no-obligation quote today. We'll assess your property
+          and create a customized maintenance plan that fits your needs and
+          budget.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Quick Response</h3>
+            <p class="mb-4">
+              We typically respond to all inquiries within 24 hours
+            </p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Free Estimates</h3>
+            <p class="mb-4">
+              No hidden fees - transparent pricing from the start
+            </p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <p class="text-2xl font-bold">
+            📞
+            <a
+              href="tel:+1-512-828-2664"
+              class="underline hover:text-green-200 transition-colors"
+              >512-828-2664</a
+            >
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:+1-512-828-2664"
+              class="bg-white text-green-700 px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-50 transition-colors"
+            >
+              Call Now
+            </a>
+            <a
+              href="sms:+1-512-828-2664"
+              class="bg-green-800 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-900 transition-colors"
+            >
+              Send Text
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-green-700 text-white text-center py-4">
-      <p>&copy; 2025 CCR Landscaping. All rights reserved.</p>
+    <footer class="bg-gray-800 text-white text-center py-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-4">
+          <h3 class="text-xl font-semibold mb-2">CCR Landscaping</h3>
+          <p class="text-gray-400">Professional Lawn Care Services</p>
+        </div>
+        <div class="border-t border-gray-700 pt-4">
+          <p>&copy; 2025 CCR Landscaping. All rights reserved.</p>
+          <p class="text-gray-400 text-sm mt-2">
+            Licensed & Insured • Serving Austin, TX and surrounding areas
+          </p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
