@@ -15,6 +15,7 @@
     <style>
       body {
         font-family: "Roboto", sans-serif;
+        background-color: #f8fafc; /* Light grayish background */
       }
       .hero-gradient {
         background: linear-gradient(135deg, #15803d 0%, #166534 100%);
@@ -58,15 +59,38 @@
         transform: scale(1.05);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       }
+      .testimonials-bg {
+        background-image: url('assets/IMG_4555.jpeg');
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        position: relative;
+      }
+      /* Add slight shadow to white cards for better contrast on gray background */
+      .shadow-card {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      /* Smooth scrolling for mobile carousel */
+      .carousel-container {
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .carousel-container::-webkit-scrollbar {
+        display: none;
+      }
       @media (max-width: 768px) {
         .sticky-cta {
           bottom: 10px;
           right: 10px;
         }
+        .testimonials-bg {
+          background-attachment: scroll;
+        }
       }
     </style>
   </head>
-  <body class="bg-white text-gray-800">
+  <body class="bg-slate-50 text-gray-800">
     <!-- Sticky Call Button -->
     <div class="sticky-cta">
       <a
@@ -79,7 +103,7 @@
 
     <!-- Hero Section -->
     <header class="text-white text-center py-16 relative overflow-hidden bg-cover bg-center" style="background-image: url('assets/IMG_4556.jpeg');">
-  <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="absolute inset-0 bg-black opacity-50"></div>
 
       <div class="relative z-10">
         <img
@@ -132,7 +156,7 @@
           into stunning outdoor spaces that you'll love coming home to.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          <div class="text-center">
+          <div class="text-center bg-white p-6 rounded-lg shadow-card">
             <div
               class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
             >
@@ -141,7 +165,7 @@
             <h3 class="text-xl font-semibold mb-2">Licensed & Insured</h3>
             <p class="text-gray-600">Professional service you can trust</p>
           </div>
-          <div class="text-center">
+          <div class="text-center bg-white p-6 rounded-lg shadow-card">
             <div
               class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
             >
@@ -150,7 +174,7 @@
             <h3 class="text-xl font-semibold mb-2">5-Star Service</h3>
             <p class="text-gray-600">Committed to excellence in every job</p>
           </div>
-          <div class="text-center">
+          <div class="text-center bg-white p-6 rounded-lg shadow-card">
             <div
               class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
             >
@@ -172,14 +196,14 @@
     </section>
 
     <!-- Services Section -->
-    <section class="bg-gray-50 py-16 px-6">
+    <section class="bg-gray-100/50 py-16 px-6">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-4xl font-bold text-center text-green-700 mb-12">
           Our Services
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div
-            class="service-card bg-white p-8 rounded-lg shadow-lg text-center"
+            class="service-card bg-white p-8 rounded-lg shadow-card text-center"
           >
             <div
               class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
@@ -208,7 +232,7 @@
           </div>
 
           <div
-            class="service-card bg-white p-8 rounded-lg shadow-lg text-center"
+            class="service-card bg-white p-8 rounded-lg shadow-card text-center"
           >
             <div
               class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
@@ -237,7 +261,7 @@
           </div>
 
           <div
-            class="service-card bg-white p-8 rounded-lg shadow-lg text-center"
+            class="service-card bg-white p-8 rounded-lg shadow-card text-center"
           >
             <div
               class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
@@ -289,49 +313,49 @@
       <div class="max-w-6xl mx-auto">
         <!-- Desktop Grid -->
         <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+          <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img1.jpeg"
               alt="Professional lawn care work by CCR Landscaping"
               class="w-full h-64 object-cover"
             />
           </div>
-          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+          <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img2.jpeg"
               alt="Quality landscaping services in Austin"
               class="w-full h-64 object-cover"
             />
           </div>
-          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+          <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img3.jpeg"
               alt="Expert lawn maintenance and care"
               class="w-full h-64 object-cover"
             />
           </div>
-          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+          <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img4.jpeg"
               alt="Professional landscaping results"
               class="w-full h-64 object-cover"
             />
           </div>
-          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+          <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img5.jpeg"
               alt="Precision lawn care and edging"
               class="w-full h-64 object-cover"
             />
           </div>
-          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+          <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img6.jpeg"
               alt="Quality lawn mowing and maintenance"
               class="w-full h-64 object-cover"
             />
           </div>
-          <div class="gallery-image rounded-lg overflow-hidden shadow-md">
+          <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img7.jpeg"
               alt="Expert landscaping and yard care"
@@ -343,50 +367,50 @@
         <!-- Mobile Carousel -->
         <div class="md:hidden relative">
           <div class="overflow-x-auto">
-            <div id="gallery-carousel" class="flex gap-4 pb-4" style="scroll-snap-type: x mandatory;">
-              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+            <div id="gallery-carousel" class="carousel-container flex gap-4 pb-4" style="scroll-snap-type: x mandatory;">
+              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
                 <img
                   src="assets/img1.jpeg"
                   alt="Professional lawn care work by CCR Landscaping"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
                 <img
                   src="assets/img2.jpeg"
                   alt="Quality landscaping services in Austin"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
                 <img
                   src="assets/img3.jpeg"
                   alt="Expert lawn maintenance and care"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
                 <img
                   src="assets/img4.jpeg"
                   alt="Professional landscaping results"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
                 <img
                   src="assets/img5.jpeg"
                   alt="Precision lawn care and edging"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
                 <img
                   src="assets/img6.jpeg"
                   alt="Quality lawn mowing and maintenance"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-md flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
                 <img
                   src="assets/img7.jpeg"
                   alt="Expert landscaping and yard care"
@@ -443,39 +467,76 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="bg-green-50 py-16 px-6">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold text-center text-green-700 mb-12">
+    <section class="testimonials-bg py-16 px-6">
+      <div class="absolute inset-0 bg-black opacity-60"></div>
+      <div class="max-w-6xl mx-auto relative z-10">
+        <h2 class="text-4xl font-bold text-center text-white mb-12">
           What Our Customers Say
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
             <div class="flex mb-4">
               <span class="text-yellow-400">★★★★★</span>
             </div>
-            <p class="text-gray-600 mb-4 italic">
+            <p class="text-gray-700 mb-4 italic">
               "Absolutely amazing lawn care service! 🤩🪴 From start to finish, he was professional, reliable, and exceeded my expectations. My yard has never looked better—perfectly trimmed, edged, and spotless after his 1st visit. He was on time, friendly, and pay attention to detail. Highly recommend to anyone looking for consistent, high-quality lawn care! Thank you again Christian 😃 I look forward to doing business with you. ✨"
             </p>
             <p class="font-semibold text-green-700">- Jamecia B., Georgetown</p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
             <div class="flex mb-4">
               <span class="text-yellow-400">★★★★★</span>
             </div>
-            <p class="text-gray-600 mb-4 italic">
+            <p class="text-gray-700 mb-4 italic">
               "Reliable service every week. They show up when scheduled and do
               excellent work. Highly recommend for anyone in the Austin area!"
             </p>
             <p class="font-semibold text-green-700">- Mike R., Round Rock</p>
           </div>
+          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <p class="text-gray-700 mb-4 italic">
+              "CCR transformed our overgrown yard into something we're proud of. Professional, affordable, and always leaves the property cleaner than when they arrived. Couldn't be happier with the service!"
+            </p>
+            <p class="font-semibold text-green-700">- Sarah L., Cedar Park</p>
+          </div>
+          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <p class="text-gray-700 mb-4 italic">
+              "Best decision we made for our lawn care. Christian is punctual, thorough, and takes real pride in his work. Our neighbors have been asking who does our landscaping!"
+            </p>
+            <p class="font-semibold text-green-700">- David M., Pflugerville</p>
+          </div>
+          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <p class="text-gray-700 mb-4 italic">
+              "Outstanding service! Very reasonable pricing and they go above and beyond. Our bushes have never looked so neat and our lawn is the envy of the neighborhood. Highly recommend!"
+            </p>
+            <p class="font-semibold text-green-700">- Jennifer K., Lakeway</p>
+          </div>
+          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+            <div class="flex mb-4">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <p class="text-gray-700 mb-4 italic">
+              "Professional, reliable, and detail-oriented. CCR has been taking care of our property for months now and we couldn't be more satisfied. They truly care about quality work."
+            </p>
+            <p class="font-semibold text-green-700">- Robert T., Leander</p>
+          </div>
         </div>
         <div class="text-center mt-8">
-          <p class="text-gray-600 mb-4">
+          <p class="text-white mb-4 text-lg">
             Join our satisfied customers! Experience the CCR difference.
           </p>
           <a
             href="#contact-form"
-            class="bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors"
+            class="bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors shadow-lg"
           >
             Get Started Today
           </a>
@@ -491,14 +552,14 @@
           We proudly serve Austin and the surrounding communities:
         </p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-700">
-          <div class="bg-gray-50 p-4 rounded-lg">Austin</div>
-          <div class="bg-gray-50 p-4 rounded-lg">Cedar Park</div>
-          <div class="bg-gray-50 p-4 rounded-lg">Round Rock</div>
-          <div class="bg-gray-50 p-4 rounded-lg">Pflugerville</div>
-          <div class="bg-gray-50 p-4 rounded-lg">Lakeway</div>
-          <div class="bg-gray-50 p-4 rounded-lg">Bee Cave</div>
-          <div class="bg-gray-50 p-4 rounded-lg">Leander</div>
-          <div class="bg-gray-50 p-4 rounded-lg">Georgetown</div>
+          <div class="bg-white p-4 rounded-lg shadow-card">Austin</div>
+          <div class="bg-white p-4 rounded-lg shadow-card">Cedar Park</div>
+          <div class="bg-white p-4 rounded-lg shadow-card">Round Rock</div>
+          <div class="bg-white p-4 rounded-lg shadow-card">Pflugerville</div>
+          <div class="bg-white p-4 rounded-lg shadow-card">Lakeway</div>
+          <div class="bg-white p-4 rounded-lg shadow-card">Bee Cave</div>
+          <div class="bg-white p-4 rounded-lg shadow-card">Leander</div>
+          <div class="bg-white p-4 rounded-lg shadow-card">Georgetown</div>
         </div>
         <p class="text-gray-600 mt-6">
           Don't see your area? Give us a call - we may still be able to help!
@@ -507,7 +568,7 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section id="contact-form" class="bg-gray-50 py-16 px-6">
+    <section id="contact-form" class="bg-gray-100/50 py-16 px-6">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
           Request Your Free Quote
@@ -517,45 +578,13 @@
         </p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <form class="space-y-6">
+            <form class="space-y-6 bg-white p-8 rounded-lg shadow-card">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  placeholder="(512) 555-0123"
-                />
-              </div>
-              <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Property Address *</label>
-                <input
-                  type="text"
-                  id="address"
-                  name="address"
                   required
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
                   placeholder="123 Main St, Austin, TX"
@@ -595,7 +624,7 @@
             </form>
           </div>
           <div class="lg:pl-8">
-            <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="bg-white p-8 rounded-lg shadow-card">
               <h3 class="text-2xl font-bold text-green-700 mb-6">Why Choose CCR?</h3>
               <div class="space-y-4">
                 <div class="flex items-start">
@@ -713,7 +742,7 @@
           </p>
         </div>
       </div>
-    </section>
+    </footer>
 
     <script>
       // Gallery carousel functionality
@@ -776,4 +805,36 @@
       });
     </script>
   </body>
-</html>
+</html>:ring-green-500 focus:border-green-500"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="(512) 555-0123"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Property Address *</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus
