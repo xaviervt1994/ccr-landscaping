@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CCR Landscaping - Professional Lawn Care in Austin, TX</title>
-    <meta name="description" content="Professional landscaping services in Austin, TX. Expert lawn mowing, edging, and bush care. Licensed & insured with 5-star service. Free quotes available.">
+    <meta
+      name="description"
+      content="Professional landscaping services in Austin, TX. Expert lawn mowing, edging, and bush care. Licensed & insured with 5-star service. Free quotes available."
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +18,7 @@
     <style>
       body {
         font-family: "Roboto", sans-serif;
-        background-color: #f8fafc; /* Light grayish background */
+        background-color: #f1f5f9; /* Consistent light gray background */
       }
       .hero-gradient {
         background: linear-gradient(135deg, #15803d 0%, #166534 100%);
@@ -60,17 +63,18 @@
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       }
       .testimonials-bg {
-        background-image: url('assets/IMG_4555.jpeg');
+        background-image: url("assets/IMG_4555.jpeg");
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
         position: relative;
       }
-      /* Add slight shadow to white cards for better contrast on gray background */
+      /* Add subtle shadow to white cards for better contrast on gray background */
       .shadow-card {
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
       }
-      /* Smooth scrolling for mobile carousel */
+      /* Smooth scrolling for carousels */
       .carousel-container {
         scroll-behavior: smooth;
         scrollbar-width: none;
@@ -78,6 +82,13 @@
       }
       .carousel-container::-webkit-scrollbar {
         display: none;
+      }
+      /* Testimonial card styling */
+      .testimonial-card {
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
       @media (max-width: 768px) {
         .sticky-cta {
@@ -90,7 +101,7 @@
       }
     </style>
   </head>
-  <body class="bg-slate-50 text-gray-800">
+  <body class="bg-slate-100 text-gray-800">
     <!-- Sticky Call Button -->
     <div class="sticky-cta">
       <a
@@ -102,7 +113,10 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="text-white text-center py-16 relative overflow-hidden bg-cover bg-center" style="background-image: url('assets/IMG_4556.jpeg');">
+    <header
+      class="text-white text-center py-16 relative overflow-hidden bg-cover bg-center"
+      style="background-image: url('assets/IMG_4556.jpeg')"
+    >
       <div class="absolute inset-0 bg-black opacity-50"></div>
 
       <div class="relative z-10">
@@ -196,7 +210,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="bg-gray-100/50 py-16 px-6">
+    <section class="bg-gray-200/30 py-16 px-6">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-4xl font-bold text-center text-green-700 mb-12">
           Our Services
@@ -367,50 +381,75 @@
         <!-- Mobile Carousel -->
         <div class="md:hidden relative">
           <div class="overflow-x-auto">
-            <div id="gallery-carousel" class="carousel-container flex gap-4 pb-4" style="scroll-snap-type: x mandatory;">
-              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
+            <div
+              id="gallery-carousel"
+              class="carousel-container flex gap-4 pb-4"
+              style="scroll-snap-type: x mandatory"
+            >
+              <div
+                class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
                 <img
                   src="assets/img1.jpeg"
                   alt="Professional lawn care work by CCR Landscaping"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div
+                class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
                 <img
                   src="assets/img2.jpeg"
                   alt="Quality landscaping services in Austin"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div
+                class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
                 <img
                   src="assets/img3.jpeg"
                   alt="Expert lawn maintenance and care"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div
+                class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
                 <img
                   src="assets/img4.jpeg"
                   alt="Professional landscaping results"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div
+                class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
                 <img
                   src="assets/img5.jpeg"
                   alt="Precision lawn care and edging"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div
+                class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
                 <img
                   src="assets/img6.jpeg"
                   alt="Quality lawn mowing and maintenance"
                   class="w-full h-64 object-cover"
                 />
               </div>
-              <div class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
+              <div
+                class="gallery-image rounded-lg overflow-hidden shadow-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
                 <img
                   src="assets/img7.jpeg"
                   alt="Expert landscaping and yard care"
@@ -419,34 +458,62 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Navigation Buttons -->
-          <button 
-            id="prev-btn" 
+          <button
+            id="prev-btn"
             class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-green-700 p-3 rounded-full shadow-lg transition-all z-10"
             onclick="scrollGallery('left')"
           >
             ←
           </button>
-          <button 
-            id="next-btn" 
+          <button
+            id="next-btn"
             class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-green-700 p-3 rounded-full shadow-lg transition-all z-10"
             onclick="scrollGallery('right')"
           >
             →
           </button>
-          
+
           <!-- Dots Indicator -->
           <div class="flex justify-center mt-4 space-x-2">
-            <div id="dot-0" class="w-3 h-3 bg-green-700 rounded-full cursor-pointer" onclick="scrollToImage(0)"></div>
-            <div id="dot-1" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(1)"></div>
-            <div id="dot-2" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(2)"></div>
-            <div id="dot-3" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(3)"></div>
-            <div id="dot-4" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(4)"></div>
-            <div id="dot-5" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(5)"></div>
-            <div id="dot-6" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="scrollToImage(6)"></div>
+            <div
+              id="dot-0"
+              class="w-3 h-3 bg-green-700 rounded-full cursor-pointer"
+              onclick="scrollToImage(0)"
+            ></div>
+            <div
+              id="dot-1"
+              class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer"
+              onclick="scrollToImage(1)"
+            ></div>
+            <div
+              id="dot-2"
+              class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer"
+              onclick="scrollToImage(2)"
+            ></div>
+            <div
+              id="dot-3"
+              class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer"
+              onclick="scrollToImage(3)"
+            ></div>
+            <div
+              id="dot-4"
+              class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer"
+              onclick="scrollToImage(4)"
+            ></div>
+            <div
+              id="dot-5"
+              class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer"
+              onclick="scrollToImage(5)"
+            ></div>
+            <div
+              id="dot-6"
+              class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer"
+              onclick="scrollToImage(6)"
+            ></div>
           </div>
-          
+
           <p class="text-center text-gray-500 text-sm mt-2">
             Swipe left or right to see more photos
           </p>
@@ -454,7 +521,8 @@
 
         <div class="text-center mt-8">
           <p class="text-gray-600 mb-4">
-            See the difference professional care makes! Ready to transform your yard?
+            See the difference professional care makes! Ready to transform your
+            yard?
           </p>
           <a
             href="tel:+1-512-828-2664"
@@ -468,68 +536,249 @@
 
     <!-- Testimonials Section -->
     <section class="testimonials-bg py-16 px-6">
-      <div class="absolute inset-0 bg-black opacity-60"></div>
+      <div class="absolute inset-0 bg-black opacity-70"></div>
       <div class="max-w-6xl mx-auto relative z-10">
         <h2 class="text-4xl font-bold text-center text-white mb-12">
           What Our Customers Say
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+
+        <!-- Desktop Grid -->
+        <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card"
+          >
             <div class="flex mb-4">
               <span class="text-yellow-400">★★★★★</span>
             </div>
-            <p class="text-gray-700 mb-4 italic">
-              "Absolutely amazing lawn care service! 🤩🪴 From start to finish, he was professional, reliable, and exceeded my expectations. My yard has never looked better—perfectly trimmed, edged, and spotless after his 1st visit. He was on time, friendly, and pay attention to detail. Highly recommend to anyone looking for consistent, high-quality lawn care! Thank you again Christian 😃 I look forward to doing business with you. ✨"
+            <p class="text-gray-700 mb-4 italic flex-grow">
+              "Absolutely amazing lawn care service! 🤩🪴 From start to finish,
+              he was professional, reliable, and exceeded my expectations. My
+              yard has never looked better—perfectly trimmed, edged, and
+              spotless after his 1st visit."
             </p>
             <p class="font-semibold text-green-700">- Jamecia B., Georgetown</p>
           </div>
-          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+          <div
+            class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card"
+          >
             <div class="flex mb-4">
               <span class="text-yellow-400">★★★★★</span>
             </div>
-            <p class="text-gray-700 mb-4 italic">
+            <p class="text-gray-700 mb-4 italic flex-grow">
               "Reliable service every week. They show up when scheduled and do
               excellent work. Highly recommend for anyone in the Austin area!"
             </p>
             <p class="font-semibold text-green-700">- Mike R., Round Rock</p>
           </div>
-          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+          <div
+            class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card"
+          >
             <div class="flex mb-4">
               <span class="text-yellow-400">★★★★★</span>
             </div>
-            <p class="text-gray-700 mb-4 italic">
-              "CCR transformed our overgrown yard into something we're proud of. Professional, affordable, and always leaves the property cleaner than when they arrived. Couldn't be happier with the service!"
+            <p class="text-gray-700 mb-4 italic flex-grow">
+              "CCR transformed our overgrown yard into something we're proud of.
+              Professional, affordable, and always leaves the property cleaner
+              than when they arrived. Couldn't be happier!"
             </p>
             <p class="font-semibold text-green-700">- Sarah L., Cedar Park</p>
           </div>
-          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+          <div
+            class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card"
+          >
             <div class="flex mb-4">
               <span class="text-yellow-400">★★★★★</span>
             </div>
-            <p class="text-gray-700 mb-4 italic">
-              "Best decision we made for our lawn care. Christian is punctual, thorough, and takes real pride in his work. Our neighbors have been asking who does our landscaping!"
+            <p class="text-gray-700 mb-4 italic flex-grow">
+              "Best decision we made for our lawn care. Christian is punctual,
+              thorough, and takes real pride in his work. Our neighbors have
+              been asking who does our landscaping!"
             </p>
             <p class="font-semibold text-green-700">- David M., Pflugerville</p>
           </div>
-          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+          <div
+            class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card"
+          >
             <div class="flex mb-4">
               <span class="text-yellow-400">★★★★★</span>
             </div>
-            <p class="text-gray-700 mb-4 italic">
-              "Outstanding service! Very reasonable pricing and they go above and beyond. Our bushes have never looked so neat and our lawn is the envy of the neighborhood. Highly recommend!"
+            <p class="text-gray-700 mb-4 italic flex-grow">
+              "Outstanding service! Very reasonable pricing and they go above
+              and beyond. Our bushes have never looked so neat and our lawn is
+              the envy of the neighborhood."
             </p>
             <p class="font-semibold text-green-700">- Jennifer K., Lakeway</p>
           </div>
-          <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+          <div
+            class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card"
+          >
             <div class="flex mb-4">
               <span class="text-yellow-400">★★★★★</span>
             </div>
-            <p class="text-gray-700 mb-4 italic">
-              "Professional, reliable, and detail-oriented. CCR has been taking care of our property for months now and we couldn't be more satisfied. They truly care about quality work."
+            <p class="text-gray-700 mb-4 italic flex-grow">
+              "Professional, reliable, and detail-oriented. CCR has been taking
+              care of our property for months now and we couldn't be more
+              satisfied. They truly care about quality work."
             </p>
             <p class="font-semibold text-green-700">- Robert T., Leander</p>
           </div>
         </div>
+
+        <!-- Mobile Carousel -->
+        <div class="md:hidden relative">
+          <div class="overflow-x-auto">
+            <div
+              id="testimonials-carousel"
+              class="carousel-container flex gap-4 pb-4"
+              style="scroll-snap-type: x mandatory"
+            >
+              <div
+                class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
+                <div class="flex mb-4">
+                  <span class="text-yellow-400">★★★★★</span>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                  "Absolutely amazing lawn care service! 🤩🪴 From start to
+                  finish, he was professional, reliable, and exceeded my
+                  expectations."
+                </p>
+                <p class="font-semibold text-green-700">
+                  - Jamecia B., Georgetown
+                </p>
+              </div>
+              <div
+                class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
+                <div class="flex mb-4">
+                  <span class="text-yellow-400">★★★★★</span>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                  "Reliable service every week. They show up when scheduled and
+                  do excellent work. Highly recommend!"
+                </p>
+                <p class="font-semibold text-green-700">
+                  - Mike R., Round Rock
+                </p>
+              </div>
+              <div
+                class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
+                <div class="flex mb-4">
+                  <span class="text-yellow-400">★★★★★</span>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                  "CCR transformed our overgrown yard into something we're proud
+                  of. Professional, affordable, and always clean."
+                </p>
+                <p class="font-semibold text-green-700">
+                  - Sarah L., Cedar Park
+                </p>
+              </div>
+              <div
+                class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
+                <div class="flex mb-4">
+                  <span class="text-yellow-400">★★★★★</span>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                  "Best decision for our lawn care. Christian is punctual,
+                  thorough, and takes real pride in his work."
+                </p>
+                <p class="font-semibold text-green-700">
+                  - David M., Pflugerville
+                </p>
+              </div>
+              <div
+                class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
+                <div class="flex mb-4">
+                  <span class="text-yellow-400">★★★★★</span>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                  "Outstanding service! Very reasonable pricing and they go
+                  above and beyond expectations every time."
+                </p>
+                <p class="font-semibold text-green-700">
+                  - Jennifer K., Lakeway
+                </p>
+              </div>
+              <div
+                class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-lg testimonial-card flex-shrink-0 w-80"
+                style="scroll-snap-align: start"
+              >
+                <div class="flex mb-4">
+                  <span class="text-yellow-400">★★★★★</span>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                  "Professional, reliable, and detail-oriented. They truly care
+                  about quality work and customer satisfaction."
+                </p>
+                <p class="font-semibold text-green-700">- Robert T., Leander</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <button
+            id="testimonials-prev-btn"
+            class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-green-700 p-3 rounded-full shadow-lg transition-all z-10"
+            onclick="scrollTestimonials('left')"
+          >
+            ←
+          </button>
+          <button
+            id="testimonials-next-btn"
+            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-green-700 p-3 rounded-full shadow-lg transition-all z-10"
+            onclick="scrollTestimonials('right')"
+          >
+            →
+          </button>
+
+          <!-- Dots Indicator -->
+          <div class="flex justify-center mt-4 space-x-2">
+            <div
+              id="testimonial-dot-0"
+              class="w-3 h-3 bg-white rounded-full cursor-pointer"
+              onclick="scrollToTestimonial(0)"
+            ></div>
+            <div
+              id="testimonial-dot-1"
+              class="w-3 h-3 bg-white/50 rounded-full cursor-pointer"
+              onclick="scrollToTestimonial(1)"
+            ></div>
+            <div
+              id="testimonial-dot-2"
+              class="w-3 h-3 bg-white/50 rounded-full cursor-pointer"
+              onclick="scrollToTestimonial(2)"
+            ></div>
+            <div
+              id="testimonial-dot-3"
+              class="w-3 h-3 bg-white/50 rounded-full cursor-pointer"
+              onclick="scrollToTestimonial(3)"
+            ></div>
+            <div
+              id="testimonial-dot-4"
+              class="w-3 h-3 bg-white/50 rounded-full cursor-pointer"
+              onclick="scrollToTestimonial(4)"
+            ></div>
+            <div
+              id="testimonial-dot-5"
+              class="w-3 h-3 bg-white/50 rounded-full cursor-pointer"
+              onclick="scrollToTestimonial(5)"
+            ></div>
+          </div>
+
+          <p class="text-center text-white/70 text-sm mt-2">
+            Swipe left or right to see more reviews
+          </p>
+        </div>
+
         <div class="text-center mt-8">
           <p class="text-white mb-4 text-lg">
             Join our satisfied customers! Experience the CCR difference.
@@ -568,30 +817,83 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section id="contact-form" class="bg-gray-100/50 py-16 px-6">
+    <section id="contact-form" class="bg-gray-200/30 py-16 px-6">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
           Request Your Free Quote
         </h2>
         <p class="text-center text-gray-600 mb-8">
-          Prefer to get in touch online? Fill out the form below and we'll get back to you within 24 hours!
+          Prefer to get in touch online? Fill out the form below and we'll get
+          back to you within 24 hours!
         </p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <form class="space-y-6 bg-white p-8 rounded-lg shadow-card">
               <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Full Name *</label
+                >
                 <input
                   type="text"
                   id="name"
                   name="name"
                   required
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label
+                  for="phone"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Phone Number *</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="(512) 555-0123"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label
+                  for="address"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Property Address *</label
+                >
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
                   placeholder="123 Main St, Austin, TX"
                 />
               </div>
               <div>
-                <label for="services" class="block text-sm font-medium text-gray-700 mb-2">Services Needed</label>
+                <label
+                  for="services"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Services Needed</label
+                >
                 <select
                   id="services"
                   name="services"
@@ -606,7 +908,11 @@
                 </select>
               </div>
               <div>
-                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Additional Details</label>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Additional Details</label
+                >
                 <textarea
                   id="message"
                   name="message"
@@ -625,42 +931,66 @@
           </div>
           <div class="lg:pl-8">
             <div class="bg-white p-8 rounded-lg shadow-card">
-              <h3 class="text-2xl font-bold text-green-700 mb-6">Why Choose CCR?</h3>
+              <h3 class="text-2xl font-bold text-green-700 mb-6">
+                Why Choose CCR?
+              </h3>
               <div class="space-y-4">
                 <div class="flex items-start">
-                  <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div
+                    class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1"
+                  >
                     <span class="text-green-700 text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <h4 class="font-semibold text-gray-800">24-Hour Response</h4>
-                    <p class="text-gray-600 text-sm">We respond to all quote requests within one business day</p>
+                    <h4 class="font-semibold text-gray-800">
+                      24-Hour Response
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                      We respond to all quote requests within one business day
+                    </p>
                   </div>
                 </div>
                 <div class="flex items-start">
-                  <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div
+                    class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1"
+                  >
                     <span class="text-green-700 text-sm font-bold">✓</span>
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-800">Free Estimates</h4>
-                    <p class="text-gray-600 text-sm">No obligation quotes with transparent pricing</p>
+                    <p class="text-gray-600 text-sm">
+                      No obligation quotes with transparent pricing
+                    </p>
                   </div>
                 </div>
                 <div class="flex items-start">
-                  <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div
+                    class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1"
+                  >
                     <span class="text-green-700 text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <h4 class="font-semibold text-gray-800">Licensed & Insured</h4>
-                    <p class="text-gray-600 text-sm">Professional service with full coverage protection</p>
+                    <h4 class="font-semibold text-gray-800">
+                      Licensed & Insured
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                      Professional service with full coverage protection
+                    </p>
                   </div>
                 </div>
                 <div class="flex items-start">
-                  <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div
+                    class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1"
+                  >
                     <span class="text-green-700 text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <h4 class="font-semibold text-gray-800">Satisfaction Guaranteed</h4>
-                    <p class="text-gray-600 text-sm">We're not happy until you're completely satisfied</p>
+                    <h4 class="font-semibold text-gray-800">
+                      Satisfaction Guaranteed
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                      We're not happy until you're completely satisfied
+                    </p>
                   </div>
                 </div>
               </div>
@@ -750,33 +1080,35 @@
       const totalImages = 7;
 
       function scrollGallery(direction) {
-        const carousel = document.getElementById('gallery-carousel');
+        const carousel = document.getElementById("gallery-carousel");
         const imageWidth = 320; // 80 * 4 (w-80 = 320px)
-        
-        if (direction === 'left') {
-          currentImageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : totalImages - 1;
+
+        if (direction === "left") {
+          currentImageIndex =
+            currentImageIndex > 0 ? currentImageIndex - 1 : totalImages - 1;
         } else {
-          currentImageIndex = currentImageIndex < totalImages - 1 ? currentImageIndex + 1 : 0;
+          currentImageIndex =
+            currentImageIndex < totalImages - 1 ? currentImageIndex + 1 : 0;
         }
-        
+
         carousel.scrollTo({
           left: currentImageIndex * imageWidth,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
-        
+
         updateDots();
       }
 
       function scrollToImage(index) {
-        const carousel = document.getElementById('gallery-carousel');
+        const carousel = document.getElementById("gallery-carousel");
         const imageWidth = 320;
         currentImageIndex = index;
-        
+
         carousel.scrollTo({
           left: currentImageIndex * imageWidth,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
-        
+
         updateDots();
       }
 
@@ -784,57 +1116,80 @@
         for (let i = 0; i < totalImages; i++) {
           const dot = document.getElementById(`dot-${i}`);
           if (i === currentImageIndex) {
-            dot.className = 'w-3 h-3 bg-green-700 rounded-full cursor-pointer';
+            dot.className = "w-3 h-3 bg-green-700 rounded-full cursor-pointer";
           } else {
-            dot.className = 'w-3 h-3 bg-gray-300 rounded-full cursor-pointer';
+            dot.className = "w-3 h-3 bg-gray-300 rounded-full cursor-pointer";
+          }
+        }
+      }
+
+      // Testimonials carousel functionality
+      let currentTestimonialIndex = 0;
+      const totalTestimonials = 6;
+
+      function scrollTestimonials(direction) {
+        const carousel = document.getElementById("testimonials-carousel");
+        const cardWidth = 320; // w-80 = 320px
+
+        if (direction === "left") {
+          currentTestimonialIndex =
+            currentTestimonialIndex > 0
+              ? currentTestimonialIndex - 1
+              : totalTestimonials - 1;
+        } else {
+          currentTestimonialIndex =
+            currentTestimonialIndex < totalTestimonials - 1
+              ? currentTestimonialIndex + 1
+              : 0;
+        }
+
+        carousel.scrollTo({
+          left: currentTestimonialIndex * cardWidth,
+          behavior: "smooth",
+        });
+
+        updateTestimonialDots();
+      }
+
+      function scrollToTestimonial(index) {
+        const carousel = document.getElementById("testimonials-carousel");
+        const cardWidth = 320;
+        currentTestimonialIndex = index;
+
+        carousel.scrollTo({
+          left: currentTestimonialIndex * cardWidth,
+          behavior: "smooth",
+        });
+
+        updateTestimonialDots();
+      }
+
+      function updateTestimonialDots() {
+        for (let i = 0; i < totalTestimonials; i++) {
+          const dot = document.getElementById(`testimonial-dot-${i}`);
+          if (i === currentTestimonialIndex) {
+            dot.className = "w-3 h-3 bg-white rounded-full cursor-pointer";
+          } else {
+            dot.className = "w-3 h-3 bg-white/50 rounded-full cursor-pointer";
           }
         }
       }
 
       // Auto-scroll functionality (optional)
       setInterval(() => {
-        if (window.innerWidth < 768) { // Only on mobile
-          scrollGallery('right');
+        if (window.innerWidth < 768) {
+          // Only on mobile
+          scrollGallery("right");
         }
       }, 5000);
 
-      // Simple form handling (you'll need to connect this to your backend)
-      document.querySelector('form').addEventListener('submit', function(e) {
+      // Simple form handling
+      document.querySelector("form").addEventListener("submit", function (e) {
         e.preventDefault();
-        alert('Thank you for your interest! We\'ll contact you within 24 hours. For immediate assistance, please call 512-828-2664.');
+        alert(
+          "Thank you for your interest! We'll contact you within 24 hours. For immediate assistance, please call 512-828-2664."
+        );
       });
     </script>
   </body>
-</html>:ring-green-500 focus:border-green-500"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  placeholder="(512) 555-0123"
-                />
-              </div>
-              <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Property Address *</label>
-                <input
-                  type="text"
-                  id="address"
-                  name="address"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus
+</html>
