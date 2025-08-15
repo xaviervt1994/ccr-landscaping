@@ -3,11 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CCR Landscaping - Professional Lawn Care in Austin, TX</title>
+    <title>
+      CCR Landscaping - Professional Lawn Care in Austin, TX | Licensed &
+      Insured
+    </title>
     <meta
       name="description"
-      content="Professional landscaping services in Austin, TX. Expert lawn mowing, edging, and bush care. Licensed & insured with 5-star service. Free quotes available."
+      content="Professional landscaping services in Austin, Round Rock, Pflugerville, Cedar Park. Expert lawn mowing starting at $55/visit. Licensed & insured with 5-star service. Same-day priority available."
     />
+    <meta
+      name="keywords"
+      content="lawn care Austin, landscaping Austin TX, lawn mowing Round Rock, landscaping Pflugerville, lawn service Cedar Park, yard maintenance Georgetown, grass cutting Lakeway, lawn care Leander"
+    />
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "CCR Landscaping",
+        "description": "Professional lawn care and landscaping services in Austin and surrounding areas",
+        "url": "https://ccrlandscapingtx.com",
+        "telephone": "+1-512-828-2664",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Austin",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 30.2672,
+          "longitude": -97.7431
+        },
+        "areaServed": [
+          "Austin",
+          "Round Rock",
+          "Pflugerville",
+          "Cedar Park",
+          "Lakeway",
+          "Bee Cave",
+          "Leander",
+          "Georgetown"
+        ],
+        "priceRange": "$$",
+        "openingHours": "Mo-Sa 06:00-20:00"
+      }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does lawn mowing cost in Austin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our lawn mowing services start at $55 per visit for properties under 5,000 sq ft. Prices vary based on lot size and service frequency."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer same-day lawn service?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! We offer 2 same-day priority slots daily with 50-100% premium pricing. Check availability when booking."
+            }
+          }
+        ]
+      }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script
       type="text/javascript"
@@ -91,6 +160,30 @@
         flex-direction: column;
         justify-content: space-between;
       }
+      .fall-banner {
+        background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+        animation: slideDown 0.5s ease-out;
+      }
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      .priority-badge {
+        animation: flash 2s infinite;
+      }
+      @keyframes flash {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+      }
 
       /* Loading spinner */
       .spinner {
@@ -145,6 +238,17 @@
     </style>
   </head>
   <body class="bg-slate-100 text-gray-800">
+    <!-- Fall Teaser Banner -->
+    <div class="fall-banner text-white text-center py-3 px-4">
+      <p class="text-sm md:text-base font-semibold">
+        🍂 Fall Services Now Booking! Limited slots for leaf cleanup & holiday
+        lights.
+        <a href="#fall-services" class="underline font-bold"
+          >Reserve Your Spot →</a
+        >
+      </p>
+    </div>
+
     <!-- Sticky Call Button -->
     <div class="sticky-cta">
       <a
@@ -165,23 +269,29 @@
       <div class="relative z-10">
         <img
           src="assets/CCR Landscaping Logo Design.png"
-          alt="CCR Landscaping Logo"
+          alt="CCR Landscaping Logo - Professional Lawn Care Austin TX"
           class="mx-auto w-80 md:w-[480px] mb-6 fade-in"
         />
         <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">
           CCR Landscaping
         </h1>
         <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto px-4 fade-in">
-          <em>Affordable, Reliable Lawn Care in Austin & Surrounding Areas</em>
+          <em>Professional Lawn Care Starting at $55/Visit</em>
         </p>
-        <div class="flex items-center justify-center gap-6 mb-8 fade-in">
+        <div
+          class="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-8 fade-in"
+        >
           <div class="flex items-center text-lg">
             <span class="text-green-300 mr-2">✅</span>
-            <span>Locally Owned</span>
+            <span>Licensed & Insured</span>
           </div>
           <div class="flex items-center text-lg">
             <span class="text-green-300 mr-2">✅</span>
-            <span>Trusted by Real Customers</span>
+            <span>Same-Day Priority Available</span>
+          </div>
+          <div class="flex items-center text-lg">
+            <span class="text-green-300 mr-2">✅</span>
+            <span>5-Star Rated</span>
           </div>
         </div>
         <p class="text-xl font-semibold mb-8 fade-in">
@@ -197,94 +307,480 @@
             href="#pricing-plans"
             class="bg-white text-green-700 px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-50 transition-all pulse-button inline-block"
           >
-            See Lawn Care Plans
+            View Pricing & Plans
           </a>
           <a
-            href="tel:+1-512-828-2664"
-            class="bg-green-800 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-900 transition-colors inline-block"
+            href="#same-day"
+            class="bg-orange-500 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-orange-600 transition-colors inline-block priority-badge"
           >
-            Get Free Quote
+            🚀 Same-Day Service
           </a>
         </div>
       </div>
     </header>
 
-    <!-- About Section -->
-    <section class="py-16 px-6">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-green-700 mb-6">
-          About CCR Landscaping
-        </h2>
-        <p class="text-lg text-gray-600 leading-relaxed mb-8">
-          We're a locally-owned landscaping company dedicated to keeping Austin
-          beautiful, one lawn at a time. With years of experience and a
-          commitment to quality, we take pride in transforming ordinary yards
-          into stunning outdoor spaces that you'll love coming home to.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          <div class="text-center bg-white p-6 rounded-lg shadow-card">
-            <div
-              class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <span class="text-green-700 text-2xl font-bold">✓</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Licensed & Insured</h3>
-            <p class="text-gray-600">Professional service you can trust</p>
+    <!-- Trust Bar -->
+    <section class="bg-green-700 text-white py-4">
+      <div class="max-w-6xl mx-auto px-6">
+        <div
+          class="flex flex-wrap justify-center items-center gap-6 text-sm md:text-base"
+        >
+          <div class="flex items-center">
+            <span class="mr-2">📍</span>
+            <span>Serving Austin & Surrounding Areas</span>
           </div>
-          <div class="text-center bg-white p-6 rounded-lg shadow-card">
-            <div
-              class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+          <div class="flex items-center">
+            <span class="mr-2">⭐</span>
+            <a
+              href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK"
+              target="_blank"
+              class="underline"
             >
-              <span class="text-green-700 text-2xl font-bold">★</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">5-Star Service</h3>
-            <p class="text-gray-600">Committed to excellence in every job</p>
+              20+ Five-Star Reviews
+            </a>
           </div>
-          <div class="text-center bg-white p-6 rounded-lg shadow-card">
-            <div
-              class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <span class="text-green-700 text-2xl font-bold">🏠</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Local Experts</h3>
-            <p class="text-gray-600">We know Austin's unique landscape needs</p>
+          <div class="flex items-center">
+            <span class="mr-2">✓</span>
+            <span>CCR Promise: Satisfaction Guaranteed</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="py-16 px-6 bg-green-50">
+    <!-- Same-Day Priority Section -->
+    <section id="same-day" class="py-12 px-6 bg-orange-50">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-green-700 mb-6">
-          Ready to Book Your First Mow?
+        <div
+          class="inline-block bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold mb-4"
+        >
+          LIMITED AVAILABILITY
+        </div>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          Need It Done Today? Same-Day Priority Service
         </h2>
-        <p class="text-lg text-gray-700 mb-8">
-          Join the growing list of satisfied Austin homeowners who trust CCR
-          with their lawn care.
+        <p class="text-lg text-gray-600 mb-6">
+          We reserve 2 slots daily for urgent needs. Premium pricing applies
+          (+50-100%).
         </p>
-        <div class="space-y-4">
-          <p class="text-2xl font-bold text-green-800">
-            📞 Call or Text Christian:
-            <a
-              href="tel:+1-512-828-2664"
-              class="underline hover:text-green-600 transition-colors"
-              >512-828-2664</a
-            >
+        <div class="bg-white rounded-lg shadow-lg p-6 inline-block">
+          <div class="text-2xl font-bold text-orange-600 mb-2">
+            Today's Availability:
+            <span id="slots-available" class="text-green-600">1 SLOT LEFT</span>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Next standard service available: Tomorrow 8-10am
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+1-512-828-2664"
-              class="bg-green-700 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-800 transition-colors"
+          <a
+            href="tel:+1-512-828-2664"
+            class="bg-orange-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors"
+          >
+            📞 Book Priority Slot Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section - UPDATED -->
+    <section id="pricing-plans" class="bg-gray-200/30 py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-green-700 mb-4">
+          Maintenance Plans That Fit Your Needs
+        </h2>
+        <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          Professional lawn care with transparent, per-visit pricing. No hidden
+          fees, no surprises.
+        </p>
+
+        <!-- Pricing Note -->
+        <div
+          class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto"
+        >
+          <p class="text-center text-blue-800">
+            💡 <strong>Pricing shown for lots ≤5,000 sq ft.</strong>
+            Larger lots: 5-8k +$10 | 8-12k +$20 | Corner/steep +$10-20
+          </p>
+        </div>
+
+        <!-- Maintenance Plans -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-center text-gray-700 mb-8">
+            Core Maintenance Plans
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- Starter Weekly -->
+            <div
+              class="bg-white rounded-lg shadow-card p-8 text-center relative"
             >
-              Call Now
-            </a>
-            <a
-              href="#contact-form"
-              class="bg-white text-green-700 border-2 border-green-700 px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-50 transition-colors"
+              <div class="text-4xl mb-2">🌱</div>
+              <h4 class="text-2xl font-bold text-gray-600 mb-2">
+                Starter Weekly
+              </h4>
+              <div class="text-4xl font-bold text-gray-800 mb-2">
+                $55<span class="text-lg text-gray-500">/visit</span>
+              </div>
+              <p class="text-green-700 font-semibold mb-4">
+                Weekly service • Always pristine
+              </p>
+              <ul class="text-left text-gray-600 space-y-3 mb-8">
+                <li class="flex items-center">
+                  <span class="text-green-700 mr-2">✓</span>
+                  Professional mowing
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-700 mr-2">✓</span>
+                  Crisp edging
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-700 mr-2">✓</span>
+                  Hardscape blow-off
+                </li>
+                <li class="flex items-center text-gray-400">
+                  <span class="mr-2">+</span>
+                  Add-ons available
+                </li>
+              </ul>
+              <a
+                href="tel:+1-512-828-2664"
+                class="bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors w-full inline-block"
+              >
+                Get Started
+              </a>
+            </div>
+
+            <!-- Standard Biweekly - MOST POPULAR -->
+            <div
+              class="bg-white rounded-lg shadow-card p-8 text-center relative border-2 border-green-500"
             >
-              📩 Contact Us
-            </a>
+              <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span
+                  class="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold"
+                >
+                  BEST VALUE
+                </span>
+              </div>
+              <div class="text-4xl mb-2">⭐</div>
+              <h4 class="text-2xl font-bold text-green-600 mb-2">
+                Standard Biweekly
+              </h4>
+              <div class="text-4xl font-bold text-gray-800 mb-2">
+                $65<span class="text-lg text-gray-500">/visit</span>
+              </div>
+              <p class="text-green-700 font-semibold mb-4">
+                Every 2 weeks • Perfect balance
+              </p>
+              <p class="text-sm text-orange-600 mb-2">
+                * Growth surcharge may apply in peak season
+              </p>
+              <ul class="text-left text-gray-600 space-y-3 mb-8">
+                <li class="flex items-center">
+                  <span class="text-green-700 mr-2">✓</span>
+                  Professional mowing
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-700 mr-2">✓</span>
+                  Crisp edging
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-700 mr-2">✓</span>
+                  Hardscape blow-off
+                </li>
+                <li class="flex items-center text-gray-400">
+                  <span class="mr-2">+</span>
+                  Add-ons available
+                </li>
+              </ul>
+              <a
+                href="tel:+1-512-828-2664"
+                class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors w-full inline-block"
+              >
+                Most Popular Choice
+              </a>
+            </div>
+
+            <!-- Premium Weekly -->
+            <div
+              class="bg-white rounded-lg shadow-card p-8 text-center relative"
+            >
+              <div class="text-4xl mb-2">👑</div>
+              <h4 class="text-2xl font-bold text-purple-600 mb-2">
+                Premium Weekly
+              </h4>
+              <div class="text-3xl font-bold text-gray-800 mb-1">
+                $55<span class="text-base text-gray-500">/visit</span>
+              </div>
+              <div class="text-lg font-semibold text-purple-600 mb-2">
+                + $25/mo bundle
+              </div>
+              <p class="text-purple-700 font-semibold mb-4">
+                Weekly + monthly extras
+              </p>
+              <ul class="text-left text-gray-600 space-y-3 mb-8">
+                <li class="flex items-center">
+                  <span class="text-green-700 mr-2">✓</span>
+                  Everything in Starter
+                </li>
+                <li class="flex items-center">
+                  <span class="text-purple-600 mr-2">★</span>
+                  <strong>Monthly shrub touch-up</strong>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-purple-600 mr-2">★</span>
+                  <strong>Bed line clean-up</strong>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-purple-600 mr-2">★</span>
+                  <strong>Debris pickup (1 bag)</strong>
+                </li>
+              </ul>
+              <a
+                href="tel:+1-512-828-2664"
+                class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors w-full inline-block"
+              >
+                Go Premium
+              </a>
+            </div>
+          </div>
+
+          <!-- Add-On Services -->
+          <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h3 class="text-2xl font-bold text-center text-gray-700 mb-8">
+              🛠️ Professional Add-On Services
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="border border-gray-200 rounded-lg p-4">
+                <h5 class="font-bold text-gray-800 mb-2">
+                  💩 Pet Waste Removal
+                </h5>
+                <p class="text-green-600 font-semibold">
+                  $15 with mow | $25 standalone
+                </p>
+                <p class="text-sm text-gray-600">Complete yard cleanup</p>
+              </div>
+              <div class="border border-gray-200 rounded-lg p-4">
+                <h5 class="font-bold text-gray-800 mb-2">🌳 Shrub Shaping</h5>
+                <p class="text-green-600 font-semibold">From $60/visit</p>
+                <p class="text-sm text-gray-600">
+                  Professional pruning & shaping
+                </p>
+              </div>
+              <div class="border border-gray-200 rounded-lg p-4">
+                <h5 class="font-bold text-gray-800 mb-2">
+                  🌲 Small Tree Pruning
+                </h5>
+                <p class="text-green-600 font-semibold">From $75</p>
+                <p class="text-sm text-gray-600">
+                  Trees under 12ft, safety equipped
+                </p>
+              </div>
+              <div class="border border-gray-200 rounded-lg p-4">
+                <h5 class="font-bold text-gray-800 mb-2">🏠 Gutter Cleaning</h5>
+                <p class="text-green-600 font-semibold">
+                  $149 (1-story) | $199 (2-story)
+                </p>
+                <p class="text-sm text-gray-600">Complete clean & inspection</p>
+              </div>
+              <div class="border border-gray-200 rounded-lg p-4">
+                <h5 class="font-bold text-gray-800 mb-2">
+                  🍂 Leaf & Branch Pickup
+                </h5>
+                <p class="text-green-600 font-semibold">From $99</p>
+                <p class="text-sm text-gray-600">Bag & haul service</p>
+              </div>
+              <div class="border border-gray-200 rounded-lg p-4">
+                <h5 class="font-bold text-gray-800 mb-2">
+                  ⚡ Storm Debris Response
+                </h5>
+                <p class="text-green-600 font-semibold">From $149</p>
+                <p class="text-sm text-gray-600">Priority cleanup service</p>
+              </div>
+            </div>
+            <p class="text-center text-gray-600 mt-6 text-sm">
+              <strong>Note:</strong> Overgrowth, tall weeds, and first-time
+              rescues quoted on-site. Haul-off/dump fees: $50-90/load depending
+              on local rates.
+            </p>
+          </div>
+
+          <!-- Fall Seasonal Services -->
+          <div
+            id="fall-services"
+            class="bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-300 rounded-lg p-8"
+          >
+            <h3 class="text-3xl font-bold text-center text-orange-700 mb-2">
+              🍂 Fall & Holiday Services
+            </h3>
+            <p class="text-center text-gray-700 mb-8">
+              <strong>Limited slots available!</strong> Book now for
+              October-December services.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <!-- Fall Bundles -->
+              <div>
+                <h4 class="text-xl font-bold text-orange-600 mb-4">
+                  Fall Bundles
+                </h4>
+
+                <div class="bg-white rounded-lg p-4 mb-4">
+                  <div class="flex justify-between items-start mb-2">
+                    <h5 class="font-bold text-gray-800">
+                      🍁 Fall Guard Bundle
+                    </h5>
+                    <span
+                      class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm font-bold"
+                      >BEST SELLER</span
+                    >
+                  </div>
+                  <p class="text-green-600 font-bold text-lg mb-1">From $249</p>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>• Complete leaf removal pass</li>
+                    <li>• Bed line clean-up</li>
+                    <li>• Front shrubs touch-up</li>
+                    <li>• Haul-off (up to 3 bags)</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 mb-4">
+                  <h5 class="font-bold text-gray-800 mb-2">
+                    🌧️ Gutter & Winter-Prep
+                  </h5>
+                  <p class="text-green-600 font-bold text-lg mb-1">From $299</p>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>• Full gutter cleaning</li>
+                    <li>• Final mow of season</li>
+                    <li>• Low-branch pruning</li>
+                    <li>• Yard waste removal</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Holiday Services -->
+              <div>
+                <h4 class="text-xl font-bold text-red-600 mb-4">
+                  Holiday Decorations
+                </h4>
+
+                <div class="bg-white rounded-lg p-4 mb-4">
+                  <h5 class="font-bold text-gray-800 mb-2">
+                    🎃 Halloween Front-Porch Glow
+                  </h5>
+                  <p class="text-green-600 font-bold text-lg mb-1">
+                    From $179 install
+                  </p>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>• Hay bales, pumpkins, mums</li>
+                    <li>• Spiderwebs & spooky lights</li>
+                    <li>• Materials extra or BYO</li>
+                    <li>• Removal service: $89</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white rounded-lg p-4">
+                  <h5 class="font-bold text-gray-800 mb-2">
+                    🎄 Holiday Lights & Décor
+                  </h5>
+                  <p class="text-green-600 font-bold text-lg mb-1">
+                    From $399 install
+                  </p>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>• Roofline mini lights</li>
+                    <li>• Door & porch scenes</li>
+                    <li>• Take-down service: $199</li>
+                    <li>• Storage available</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Firewood Subscription -->
+            <div class="bg-white rounded-lg p-6 text-center">
+              <h4 class="text-xl font-bold text-gray-800 mb-2">
+                🔥 Firewood Subscription (Nov-Feb)
+              </h4>
+              <p class="text-gray-600 mb-4">¼-cord delivered every 4 weeks</p>
+              <div
+                class="flex flex-col md:flex-row gap-4 justify-center items-center"
+              >
+                <div>
+                  <p class="text-green-600 font-bold text-lg">$149/delivery</p>
+                  <p class="text-sm text-gray-500">Stacking +$30</p>
+                </div>
+                <div class="text-gray-400">OR</div>
+                <div class="bg-green-50 p-3 rounded-lg">
+                  <p class="text-green-700 font-bold text-lg">$549 prepaid</p>
+                  <p class="text-sm text-gray-600">Save $47 on 4 deliveries!</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-8">
+              <p class="text-orange-700 font-semibold mb-4">
+                🎯 First 20 sign-ups get $25 off install or FREE gutter camera
+                inspection!
+              </p>
+              <a
+                href="tel:+1-512-828-2664"
+                class="bg-orange-500 text-white px-8 py-3 rounded-lg text-lg font-bold hover:bg-orange-600 transition-colors"
+              >
+                Reserve Fall Services Now
+              </a>
+            </div>
+          </div>
+
+          <!-- Block Day Rate -->
+          <div
+            class="bg-blue-50 border border-blue-300 rounded-lg p-6 mt-8 text-center"
+          >
+            <h3 class="text-2xl font-bold text-blue-700 mb-4">
+              🏘️ Neighbor Discount: Block Day Rate
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Get your neighbors on board and everyone saves! When 3+ homes on
+              your street sign up for the same service day:
+            </p>
+            <div class="bg-white rounded-lg p-4 inline-block">
+              <p class="text-3xl font-bold text-blue-600">From $49/visit</p>
+              <p class="text-sm text-gray-600">(≤5,000 sq ft lots)</p>
+            </div>
+            <p class="text-blue-600 font-semibold mt-4">
+              Text "BLOCK" to 512-828-2664 to organize your street!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CCR Promise & Policies -->
+    <section class="py-12 px-6 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- CCR Promise -->
+          <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-green-700 mb-3">
+              ✅ The CCR Promise
+            </h3>
+            <p class="text-gray-700">
+              If you're not happy with a recurring visit, tell us within 24
+              hours—we'll make it right at no extra charge. Your satisfaction is
+              our priority.
+            </p>
+          </div>
+
+          <!-- Service Policies -->
+          <div class="bg-gray-50 border-l-4 border-gray-400 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-gray-700 mb-3">
+              📋 Service Policies
+            </h3>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>
+                • <strong>Rain delays:</strong> Rescheduled within 48 hours
+              </li>
+              <li>• <strong>Skip fee:</strong> $15 (24hr notice required)</li>
+              <li>• <strong>Locked gates:</strong> $10 unlock fee</li>
+              <li>• <strong>Pet waste:</strong> Excessive = surcharge</li>
+              <li>• <strong>Bundles:</strong> 50% deposit required</li>
+              <li>• <strong>Billing:</strong> Autopay Fridays</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -296,7 +792,8 @@
         Real Results from CCR Clients
       </h2>
       <p class="text-center text-gray-600 mb-12 text-lg">
-        Here's what we do — and why people keep calling us back.
+        Professional quality that protects your property value—not just a $35
+        quick cut.
       </p>
       <div class="max-w-6xl mx-auto">
         <!-- Desktop Grid -->
@@ -304,49 +801,49 @@
           <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img1.jpeg"
-              alt="Professional lawn care work by CCR Landscaping"
+              alt="Professional lawn mowing service Austin TX - CCR Landscaping"
               class="w-full h-64 object-cover"
             />
           </div>
           <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img2.jpeg"
-              alt="Quality landscaping services in Austin"
+              alt="Quality landscaping Round Rock - precision edging"
               class="w-full h-64 object-cover"
             />
           </div>
           <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img3.jpeg"
-              alt="Expert lawn maintenance and care"
+              alt="Expert lawn maintenance Cedar Park TX"
               class="w-full h-64 object-cover"
             />
           </div>
           <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img4.jpeg"
-              alt="Professional landscaping results"
+              alt="Professional landscaping Pflugerville results"
               class="w-full h-64 object-cover"
             />
           </div>
           <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img5.jpeg"
-              alt="Precision lawn care and edging"
+              alt="Precision lawn care Georgetown TX"
               class="w-full h-64 object-cover"
             />
           </div>
           <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img6.jpeg"
-              alt="Quality lawn mowing and maintenance"
+              alt="Quality lawn mowing Lakeway maintenance"
               class="w-full h-64 object-cover"
             />
           </div>
           <div class="gallery-image rounded-lg overflow-hidden shadow-card">
             <img
               src="assets/img7.jpeg"
-              alt="Expert landscaping and yard care"
+              alt="Expert landscaping Leander yard care"
               class="w-full h-64 object-cover"
             />
           </div>
@@ -495,402 +992,95 @@
 
         <div class="text-center mt-8">
           <p class="text-gray-600 mb-4">
-            See the difference professional care makes! Sure, some offer $35,
-            but we do more — quality work that actually protects your
-            investment.
+            See the difference professional care makes. Quality work that
+            actually protects your investment.
           </p>
           <a
             href="#pricing-plans"
             class="bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors"
           >
-            See Our Packages
+            Get Your Quote
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Value Proposition Section -->
+    <!-- FAQ Section -->
     <section class="py-16 px-6">
       <div class="max-w-4xl mx-auto">
-        <div class="bg-green-50 border-l-4 border-green-500 p-8 rounded-lg">
-          <h3 class="text-2xl font-bold text-green-700 mb-4">
-            Why Keep Your Lawn Maintained?
-          </h3>
-          <p class="text-lg text-gray-700 mb-4">
-            A clean, maintained yard keeps pests away, improves curb appeal,
-            boosts property value — and makes your outdoor space more enjoyable
-            for your family and pets.
-          </p>
-          <p class="text-lg text-gray-700">
-            🔁
-            <strong
-              >Recurring plans = less stress, better pricing, and no forgotten
-              yard days.</strong
-            >
-            Let us handle the work while you enjoy the results.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing-plans" class="bg-gray-200/30 py-16 px-6">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold text-center text-green-700 mb-4">
-          Tiered Plans for Every Yard & Budget
-        </h2>
-        <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-          From basic trims to full-service lawn care + pet waste cleanup — we've
-          got a plan that fits your needs and saves you time.
-        </p>
-
-        <!-- Tiered Plans -->
-        <div class="mb-16">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <!-- Silver Plan -->
-            <div
-              class="bg-white rounded-lg shadow-card p-8 text-center relative"
-            >
-              <div class="text-4xl mb-2">🪙</div>
-              <h4 class="text-2xl font-bold text-gray-600 mb-2">Silver Plan</h4>
-              <div class="text-4xl font-bold text-gray-800 mb-2">
-                $50<span class="text-lg text-gray-500">/month</span>
-              </div>
-              <p class="text-green-700 font-semibold mb-4">
-                Bi-weekly service (2x per month)
-              </p>
-              <ul class="text-left text-gray-600 space-y-3 mb-8">
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Professional mowing
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Precision edging
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Blowing & cleanup
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Bush pruning & shaping
-                </li>
-              </ul>
-              <a
-                href="tel:+1-512-828-2664"
-                class="bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors w-full inline-block"
-              >
-                Get Quote
-              </a>
-            </div>
-
-            <!-- Gold Plan -->
-            <div
-              class="bg-white rounded-lg shadow-card p-8 text-center relative border-2 border-yellow-500"
-            >
-              <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span
-                  class="bg-yellow-500 text-white px-4 py-1 rounded-full text-sm font-semibold"
-                >
-                  MOST POPULAR
-                </span>
-              </div>
-              <div class="text-4xl mb-2">🥈</div>
-              <h4 class="text-2xl font-bold text-yellow-600 mb-2">Gold Plan</h4>
-              <div class="text-4xl font-bold text-gray-800 mb-2">
-                $65<span class="text-lg text-gray-500">/month</span>
-              </div>
-              <p class="text-yellow-700 font-semibold mb-4">
-                Every 10 days (3x per month average)
-              </p>
-              <ul class="text-left text-gray-600 space-y-3 mb-8">
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Professional mowing
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Precision edging
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Blowing & cleanup
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Bush pruning & shaping
-                </li>
-                <li class="flex items-center">
-                  <span class="text-yellow-600 mr-2">★</span>
-                  <strong>Pet waste removal</strong>
-                </li>
-              </ul>
-              <a
-                href="tel:+1-512-828-2664"
-                class="bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-700 transition-colors w-full inline-block"
-              >
-                Get Quote
-              </a>
-            </div>
-
-            <!-- Platinum Plan -->
-            <div
-              class="bg-white rounded-lg shadow-card p-8 text-center relative"
-            >
-              <div class="text-4xl mb-2">🥇</div>
-              <h4 class="text-2xl font-bold text-purple-600 mb-2">
-                Platinum Plan
-              </h4>
-              <div class="text-4xl font-bold text-gray-800 mb-2">
-                $75<span class="text-lg text-gray-500">/month</span>
-              </div>
-              <p class="text-purple-700 font-semibold mb-4">
-                Weekly service (4x per month)
-              </p>
-              <ul class="text-left text-gray-600 space-y-3 mb-8">
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Professional mowing
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Precision edging
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Blowing & cleanup
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Bush pruning & shaping
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-700 mr-2">✓</span>
-                  Pet waste removal
-                </li>
-                <li class="flex items-center">
-                  <span class="text-purple-600 mr-2">★</span>
-                  <strong>Small tree pruning</strong>
-                </li>
-              </ul>
-              <a
-                href="tel:+1-512-828-2664"
-                class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors w-full inline-block"
-              >
-                Get Quote
-              </a>
-            </div>
-          </div>
-
-          <!-- One-Time Pet Waste Service -->
-          <div
-            class="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center mb-8"
-          >
-            <h4 class="text-2xl font-bold text-blue-700 mb-4">
-              💩 One-Time Pet Waste Cleanup
-            </h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="bg-white p-6 rounded-lg">
-                <h5 class="text-xl font-semibold text-gray-800 mb-2">
-                  Standalone Service
-                </h5>
-                <div class="text-3xl font-bold text-blue-700 mb-2">$25</div>
-                <p class="text-gray-600">Thorough cleanup of entire yard</p>
-              </div>
-              <div class="bg-white p-6 rounded-lg">
-                <h5 class="text-xl font-semibold text-gray-800 mb-2">
-                  Add-On with Mowing
-                </h5>
-                <div class="text-3xl font-bold text-blue-700 mb-2">$15</div>
-                <p class="text-gray-600">
-                  When combined with any mowing service
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Extras Available -->
-          <div
-            class="bg-orange-50 border border-orange-200 rounded-lg p-8 text-center mb-8"
-          >
-            <h4 class="text-2xl font-bold text-orange-700 mb-6">
-              🛠️ Extras Available
-            </h4>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-              <div class="bg-white p-4 rounded-lg">
-                <h5 class="font-semibold text-gray-800 mb-2">
-                  Pet Waste Cleanup
-                </h5>
-                <p class="text-orange-700">$25 standalone or $15 with mowing</p>
-              </div>
-              <div class="bg-white p-4 rounded-lg">
-                <h5 class="font-semibold text-gray-800 mb-2">
-                  Small Tree Pruning
-                </h5>
-                <p class="text-orange-700">Starting at $20</p>
-              </div>
-              <div class="bg-white p-4 rounded-lg">
-                <h5 class="font-semibold text-gray-800 mb-2">
-                  Leaf & Branch Pickup
-                </h5>
-                <p class="text-orange-700">Seasonal pricing available</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Fall Seasonal Services -->
-          <div
-            class="bg-amber-50 border border-amber-200 rounded-lg p-8 text-center"
-          >
-            <h4 class="text-2xl font-bold text-amber-700 mb-4">
-              🍂 Fall/Winter Add-Ons
-            </h4>
-            <p class="text-gray-700 mb-4">
-              Enhance any plan with seasonal services:
-            </p>
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm"
-            >
-              <div class="bg-white p-3 rounded-lg">
-                <span class="font-semibold">🎄 Holiday Decor Setup</span>
-              </div>
-              <div class="bg-white p-3 rounded-lg">
-                <span class="font-semibold">🍂 Leaf/Branch Pickup</span>
-              </div>
-              <div class="bg-white p-3 rounded-lg">
-                <span class="font-semibold">💧 Lawn Watering Service</span>
-              </div>
-              <div class="bg-white p-3 rounded-lg">
-                <span class="font-semibold">🌳 Winter Prep Service</span>
-              </div>
-            </div>
-            <p class="text-amber-700 font-semibold mt-4">
-              Call for seasonal pricing and availability!
-            </p>
-          </div>
-        </div>
-
-        <div class="text-center mt-12">
-          <p class="text-lg text-gray-600 mb-6">
-            Questions about which plan is right for you? We're here to help!
-          </p>
-          <a
-            href="#contact-form"
-            class="bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors"
-          >
-            Get Free Consultation
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-16 px-6">
-      <div class="max-w-6xl mx-auto">
         <h2 class="text-4xl font-bold text-center text-green-700 mb-12">
-          Our Services
+          Frequently Asked Questions
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div
-            class="service-card bg-white p-8 rounded-lg shadow-card text-center"
-          >
-            <div
-              class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-            >
-              <span class="text-green-700 text-3xl">🌱</span>
-            </div>
-            <h3 class="text-2xl font-bold text-green-700 mb-4">
-              Professional Mowing
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg shadow-card p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">
+              How much does lawn mowing cost?
             </h3>
-            <p class="text-gray-600 mb-4">
-              Weekly or bi-weekly lawn mowing with precision cutting, grass
-              collection, and clean-up. We maintain the perfect height for your
-              grass type and season.
+            <p class="text-gray-600">
+              Our lawn mowing starts at $55/visit for weekly service or
+              $65/visit for biweekly service (lots ≤5,000 sq ft). Larger
+              properties are priced based on size and complexity. We provide
+              transparent, upfront pricing with no hidden fees.
             </p>
-            <ul class="text-left text-gray-600 space-y-2 mb-6">
-              <li>• Pattern mowing for professional appearance</li>
-              <li>• Grass clipping removal</li>
-              <li>• Seasonal height adjustments</li>
-            </ul>
-            <a
-              href="tel:+1-512-828-2664"
-              class="bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-green-800 transition-colors"
-            >
-              Get Quote
-            </a>
           </div>
 
-          <div
-            class="service-card bg-white p-8 rounded-lg shadow-card text-center"
-          >
-            <div
-              class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-            >
-              <span class="text-green-700 text-3xl">✂️</span>
-            </div>
-            <h3 class="text-2xl font-bold text-green-700 mb-4">
-              Precision Edging
+          <div class="bg-white rounded-lg shadow-card p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">
+              Do you offer same-day service?
             </h3>
-            <p class="text-gray-600 mb-4">
-              Clean, crisp edges along walkways, driveways, and flower beds that
-              give your lawn that professionally maintained look that makes all
-              the difference.
+            <p class="text-gray-600">
+              Yes! We reserve 2 priority slots daily for urgent needs. Same-day
+              service is available at a 50-100% premium. If our priority slots
+              are full, we can schedule you for the next available standard
+              service slot.
             </p>
-            <ul class="text-left text-gray-600 space-y-2 mb-6">
-              <li>• Sidewalk and driveway edging</li>
-              <li>• Flower bed definition</li>
-              <li>• Tree ring maintenance</li>
-            </ul>
-            <a
-              href="tel:+1-512-828-2664"
-              class="bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-green-800 transition-colors"
-            >
-              Get Quote
-            </a>
           </div>
 
-          <div
-            class="service-card bg-white p-8 rounded-lg shadow-card text-center"
-          >
-            <div
-              class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-            >
-              <span class="text-green-700 text-3xl">🌿</span>
-            </div>
-            <h3 class="text-2xl font-bold text-green-700 mb-4">
-              Bush & Shrub Care
+          <div class="bg-white rounded-lg shadow-card p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">
+              What's included in basic lawn service?
             </h3>
-            <p class="text-gray-600 mb-4">
-              Complete bush and shrub maintenance including pruning, shaping,
-              and debris removal to keep your landscaping healthy and beautiful
-              year-round.
+            <p class="text-gray-600">
+              All our maintenance plans include professional mowing, precision
+              edging along walkways and driveways, and complete blow-off of
+              hardscapes. Additional services like shrub trimming, pet waste
+              removal, and gutter cleaning are available as add-ons.
             </p>
-            <ul class="text-left text-gray-600 space-y-2 mb-6">
-              <li>• Professional pruning and shaping</li>
-              <li>• Deadheading and cleanup</li>
-              <li>• Seasonal maintenance</li>
-            </ul>
-            <a
-              href="tel:+1-512-828-2664"
-              class="bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-green-800 transition-colors"
-            >
-              Get Quote
-            </a>
           </div>
-        </div>
 
-        <div class="text-center mt-12">
-          <p class="text-lg text-gray-600 mb-6">
-            Need a custom package? We're happy to create a service plan that
-            fits your needs and budget.
-          </p>
-          <a
-            href="tel:+1-512-828-2664"
-            class="bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors"
-          >
-            Discuss Your Needs
-          </a>
+          <div class="bg-white rounded-lg shadow-card p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">
+              What areas do you serve?
+            </h3>
+            <p class="text-gray-600">
+              We proudly serve Austin, Round Rock, Pflugerville, Cedar Park,
+              Lakeway, Bee Cave, Leander, and Georgetown. Don't see your area?
+              Give us a call—we may still be able to help or add your
+              neighborhood to our route!
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-card p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">
+              What happens if it rains?
+            </h3>
+            <p class="text-gray-600">
+              Safety first! We'll reschedule your service within 48 hours of the
+              rain delay. We'll notify you of any weather-related changes and
+              work with you to find the best makeup time.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-card p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">
+              Are you licensed and insured?
+            </h3>
+            <p class="text-gray-600">
+              Absolutely! CCR Landscaping is fully licensed and insured for your
+              protection and peace of mind. We're happy to provide proof of
+              insurance upon request.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -1142,38 +1332,82 @@
 
         <div class="text-center mt-8">
           <p class="text-white mb-4 text-lg">
-            Join our satisfied customers! Experience the CCR difference.
+            Join 100+ satisfied customers!
+            <a
+              href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK"
+              target="_blank"
+              class="underline font-bold"
+            >
+              See our Google Reviews →
+            </a>
           </p>
           <a
             href="#contact-form"
             class="bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors shadow-lg"
           >
-            Get Started Today
+            Get Your Free Quote
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Service Areas -->
+    <!-- Service Areas with Map -->
     <section class="py-16 px-6">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-green-700 mb-8">Service Areas</h2>
-        <p class="text-lg text-gray-600 mb-8">
-          We proudly serve Austin and the surrounding communities:
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
+          Service Areas
+        </h2>
+        <p class="text-lg text-gray-600 text-center mb-8">
+          Proudly serving Austin and surrounding communities with professional
+          lawn care
         </p>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-700">
-          <div class="bg-white p-4 rounded-lg shadow-card">Austin</div>
-          <div class="bg-white p-4 rounded-lg shadow-card">Cedar Park</div>
-          <div class="bg-white p-4 rounded-lg shadow-card">Round Rock</div>
-          <div class="bg-white p-4 rounded-lg shadow-card">Pflugerville</div>
-          <div class="bg-white p-4 rounded-lg shadow-card">Lakeway</div>
-          <div class="bg-white p-4 rounded-lg shadow-card">Bee Cave</div>
-          <div class="bg-white p-4 rounded-lg shadow-card">Leander</div>
-          <div class="bg-white p-4 rounded-lg shadow-card">Georgetown</div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Service area list -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-700 mb-4">
+              We Service:
+            </h3>
+            <div class="grid grid-cols-2 gap-3 text-gray-700">
+              <div class="bg-white p-3 rounded-lg shadow-card">📍 Austin</div>
+              <div class="bg-white p-3 rounded-lg shadow-card">
+                📍 Cedar Park
+              </div>
+              <div class="bg-white p-3 rounded-lg shadow-card">
+                📍 Round Rock
+              </div>
+              <div class="bg-white p-3 rounded-lg shadow-card">
+                📍 Pflugerville
+              </div>
+              <div class="bg-white p-3 rounded-lg shadow-card">📍 Lakeway</div>
+              <div class="bg-white p-3 rounded-lg shadow-card">📍 Bee Cave</div>
+              <div class="bg-white p-3 rounded-lg shadow-card">📍 Leander</div>
+              <div class="bg-white p-3 rounded-lg shadow-card">
+                📍 Georgetown
+              </div>
+            </div>
+            <p class="text-gray-600 mt-4">
+              Don't see your area? Give us a call - we're expanding our routes!
+            </p>
+            <div class="mt-6 p-4 bg-green-50 rounded-lg">
+              <p class="text-green-700 font-semibold">
+                💡 Pro Tip: Organize your neighbors for our Block Day Rate and
+                save!
+              </p>
+            </div>
+          </div>
+
+          <!-- Map placeholder -->
+          <div
+            class="bg-gray-200 rounded-lg flex items-center justify-center h-80"
+          >
+            <div class="text-center text-gray-600">
+              <p class="text-xl mb-2">📍</p>
+              <p>Interactive Service Map</p>
+              <p class="text-sm">Coming Soon</p>
+            </div>
+          </div>
         </div>
-        <p class="text-gray-600 mt-6">
-          Don't see your area? Give us a call - we may still be able to help!
-        </p>
       </div>
     </section>
 
@@ -1184,8 +1418,7 @@
           Request Your Free Quote
         </h2>
         <p class="text-center text-gray-600 mb-8">
-          Prefer to get in touch online? Fill out the form below and we'll get
-          back to you within 24 hours!
+          Get a custom quote in 24 hours or less. No obligations, no surprises.
         </p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
@@ -1254,27 +1487,47 @@
               </div>
               <div>
                 <label
+                  for="lotsize"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Approximate Lot Size</label
+                >
+                <select
+                  id="lotsize"
+                  name="lotsize"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                >
+                  <option value="">Select size...</option>
+                  <option value="under-5k">Under 5,000 sq ft</option>
+                  <option value="5k-8k">5,000 - 8,000 sq ft</option>
+                  <option value="8k-12k">8,000 - 12,000 sq ft</option>
+                  <option value="over-12k">Over 12,000 sq ft</option>
+                  <option value="unsure">Not sure</option>
+                </select>
+              </div>
+              <div>
+                <label
                   for="services"
                   class="block text-sm font-medium text-gray-700 mb-2"
-                  >Plan Interest</label
+                  >Service Interest</label
                 >
                 <select
                   id="services"
                   name="services"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
                 >
-                  <option value="">Select a plan...</option>
-                  <option value="silver">
-                    Silver Plan ($50/month - Bi-weekly)
+                  <option value="">Select a service...</option>
+                  <option value="weekly">Weekly Mowing ($55/visit)</option>
+                  <option value="biweekly">
+                    Biweekly Mowing ($65/visit) - Most Popular
                   </option>
-                  <option value="gold">
-                    Gold Plan ($65/month - Every 10 days) - Most Popular
+                  <option value="premium">Premium Weekly (with extras)</option>
+                  <option value="same-day">Same-Day Priority Service</option>
+                  <option value="fall-bundle">Fall Services Bundle</option>
+                  <option value="holiday-lights">
+                    Holiday Lights Installation
                   </option>
-                  <option value="platinum">
-                    Platinum Plan ($75/month - Weekly)
-                  </option>
-                  <option value="pet-waste">One-Time Pet Waste Cleanup</option>
-                  <option value="seasonal">Seasonal Services</option>
+                  <option value="gutter">Gutter Cleaning</option>
+                  <option value="pet-waste">Pet Waste Cleanup</option>
                   <option value="custom">Custom Package</option>
                 </select>
               </div>
@@ -1289,7 +1542,7 @@
                   name="message"
                   rows="4"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  placeholder="Tell us about your yard size, specific needs, or any questions..."
+                  placeholder="Tell us about any specific needs, current lawn condition, pets, gates, or questions..."
                 ></textarea>
               </div>
               <button
@@ -1297,7 +1550,7 @@
                 id="submit-btn"
                 class="w-full bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition-colors"
               >
-                Request Free Quote
+                Get My Free Quote
               </button>
             </form>
             <!-- Message container for success/error messages -->
@@ -1320,7 +1573,7 @@
                       24-Hour Response
                     </h4>
                     <p class="text-gray-600 text-sm">
-                      We respond to all quote requests within one business day
+                      Quick quotes, no waiting around
                     </p>
                   </div>
                 </div>
@@ -1331,9 +1584,11 @@
                     <span class="text-green-700 text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <h4 class="font-semibold text-gray-800">Free Estimates</h4>
+                    <h4 class="font-semibold text-gray-800">
+                      Transparent Pricing
+                    </h4>
                     <p class="text-gray-600 text-sm">
-                      No obligation quotes with transparent pricing
+                      Per-visit pricing, no hidden fees
                     </p>
                   </div>
                 </div>
@@ -1348,7 +1603,7 @@
                       Licensed & Insured
                     </h4>
                     <p class="text-gray-600 text-sm">
-                      Professional service with full coverage protection
+                      Professional service with full coverage
                     </p>
                   </div>
                 </div>
@@ -1359,21 +1614,22 @@
                     <span class="text-green-700 text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <h4 class="font-semibold text-gray-800">
-                      Satisfaction Guaranteed
-                    </h4>
+                    <h4 class="font-semibold text-gray-800">CCR Promise</h4>
                     <p class="text-gray-600 text-sm">
-                      We're not happy until you're completely satisfied
+                      Not happy? We'll make it right within 24 hours
                     </p>
                   </div>
                 </div>
               </div>
               <div class="mt-8 p-4 bg-green-50 rounded-lg">
                 <p class="text-center text-green-700 font-semibold">
-                  Prefer to call? We're here to help!
+                  Prefer to call? We're here!
                 </p>
                 <p class="text-center text-2xl font-bold text-green-800 mt-2">
                   📞 512-828-2664
+                </p>
+                <p class="text-center text-sm text-gray-600 mt-2">
+                  Text "QUOTE" for fastest response
                 </p>
               </div>
             </div>
@@ -1382,32 +1638,31 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Final CTA Section -->
     <section class="bg-green-700 text-white py-16 px-6">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold mb-6">Ready to Get Started?</h2>
         <p class="text-xl mb-8">
-          Get your free, no-obligation quote today. We'll assess your property
-          and create a customized maintenance plan that fits your needs and
-          budget.
+          Join hundreds of Austin homeowners who trust CCR with their lawn care.
+          Professional service, transparent pricing, guaranteed satisfaction.
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 class="text-2xl font-semibold mb-4">Quick Response</h3>
-            <p class="mb-4">
-              We typically respond to all inquiries within 24 hours
-            </p>
+            <h3 class="text-2xl font-semibold mb-2">⚡ Quick Response</h3>
+            <p>Quotes within 24 hours</p>
           </div>
           <div>
-            <h3 class="text-2xl font-semibold mb-4">Free Estimates</h3>
-            <p class="mb-4">
-              No hidden fees - transparent pricing from the start
-            </p>
+            <h3 class="text-2xl font-semibold mb-2">💰 Fair Pricing</h3>
+            <p>No hidden fees, ever</p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">✅ Guaranteed</h3>
+            <p>We make it right or it's free</p>
           </div>
         </div>
         <div class="space-y-4">
           <p class="text-2xl font-bold">
-            📞
+            📞 Call or Text Christian:
             <a
               href="tel:+1-512-828-2664"
               class="underline hover:text-green-200 transition-colors"
@@ -1419,13 +1674,13 @@
               href="tel:+1-512-828-2664"
               class="bg-white text-green-700 px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-50 transition-colors"
             >
-              Call Now
+              📞 Call Now
             </a>
             <a
-              href="sms:+1-512-828-2664"
+              href="sms:+1-512-828-2664?body=Hi!%20I'd%20like%20a%20quote%20for%20lawn%20service"
               class="bg-green-800 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-900 transition-colors"
             >
-              Send Text
+              💬 Text for Quote
             </a>
           </div>
         </div>
@@ -1439,10 +1694,26 @@
           <h3 class="text-xl font-semibold mb-2">CCR Landscaping</h3>
           <p class="text-gray-400">Professional Lawn Care Services</p>
         </div>
+        <div class="flex justify-center gap-4 mb-4">
+          <a
+            href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK"
+            target="_blank"
+            class="text-gray-400 hover:text-white"
+          >
+            Google Reviews
+          </a>
+          <span class="text-gray-600">|</span>
+          <a href="tel:+1-512-828-2664" class="text-gray-400 hover:text-white">
+            512-828-2664
+          </a>
+        </div>
         <div class="border-t border-gray-700 pt-4">
           <p>&copy; 2025 CCR Landscaping. All rights reserved.</p>
           <p class="text-gray-400 text-sm mt-2">
             Licensed & Insured • Serving Austin, TX and surrounding areas
+          </p>
+          <p class="text-gray-500 text-xs mt-2">
+            Website optimized for "lawn care Austin TX" and surrounding areas
           </p>
         </div>
       </div>
@@ -1450,8 +1721,27 @@
 
     <script>
       // EmailJS Configuration
-      // Initialize EmailJS with your public key
       emailjs.init("vV-ZhwnaQBPY8Xu0x");
+
+      // Same-day availability simulator
+      function updateAvailability() {
+        const slots = document.getElementById("slots-available");
+        const hour = new Date().getHours();
+
+        if (hour < 12) {
+          slots.textContent = "2 SLOTS LEFT";
+          slots.className = "text-green-600";
+        } else if (hour < 16) {
+          slots.textContent = "1 SLOT LEFT";
+          slots.className = "text-orange-600";
+        } else {
+          slots.textContent = "FULL TODAY";
+          slots.className = "text-red-600";
+        }
+      }
+
+      updateAvailability();
+      setInterval(updateAvailability, 60000); // Update every minute
 
       // Gallery carousel functionality
       let currentImageIndex = 0;
@@ -1459,7 +1749,7 @@
 
       function scrollGallery(direction) {
         const carousel = document.getElementById("gallery-carousel");
-        const imageWidth = 320; // 80 * 4 (w-80 = 320px)
+        const imageWidth = 320;
 
         if (direction === "left") {
           currentImageIndex =
@@ -1507,7 +1797,7 @@
 
       function scrollTestimonials(direction) {
         const carousel = document.getElementById("testimonials-carousel");
-        const cardWidth = 320; // w-80 = 320px
+        const cardWidth = 320;
 
         if (direction === "left") {
           currentTestimonialIndex =
@@ -1553,14 +1843,6 @@
         }
       }
 
-      // Auto-scroll functionality (optional)
-      setInterval(() => {
-        if (window.innerWidth < 768) {
-          // Only on mobile
-          scrollGallery("right");
-        }
-      }, 5000);
-
       // EmailJS Form Handling
       document
         .getElementById("contact-form-element")
@@ -1584,6 +1866,7 @@
             from_phone: formData.get("phone"),
             from_email: formData.get("email"),
             property_address: formData.get("address"),
+            lot_size: formData.get("lotsize"),
             services_needed: formData.get("services"),
             message: formData.get("message"),
             to_name: "CCR Landscaping Team",
@@ -1591,11 +1874,7 @@
 
           // Send email using EmailJS
           emailjs
-            .send(
-              "service_1xx4ars", // Your service ID
-              "template_b1c8gd4", // Your template ID
-              templateParams
-            )
+            .send("service_1xx4ars", "template_b1c8gd4", templateParams)
             .then(
               function (response) {
                 console.log("SUCCESS!", response.status, response.text);
@@ -1603,7 +1882,7 @@
                 // Show success message
                 messageContainer.innerHTML = `
             <div class="message success">
-              <strong>✓ Success!</strong> Your quote request has been sent successfully. 
+              <strong>✓ Success!</strong> Your quote request has been sent! 
               We'll contact you within 24 hours. For immediate assistance, call 512-828-2664.
             </div>
           `;
@@ -1618,14 +1897,14 @@
                 messageContainer.innerHTML = `
             <div class="message error">
               <strong>⚠ Error:</strong> There was a problem sending your message. 
-              Please try calling us directly at 512-828-2664 or try again later.
+              Please call us directly at 512-828-2664 or try again later.
             </div>
           `;
               }
             )
             .finally(function () {
               // Reset button state
-              submitBtn.innerHTML = "Request Free Quote";
+              submitBtn.innerHTML = "Get My Free Quote";
               submitBtn.disabled = false;
             });
         });
