@@ -302,6 +302,35 @@
           background-attachment: scroll;
         }
       }
+
+      /* Falling leaves */
+      .falling-leaf {
+        position: fixed; /* stay relative to the viewport */
+        top: -10vh; /* start slightly above the screen */
+        font-size: 2rem;
+        opacity: 0.9;
+        pointer-events: none; /* so it never blocks clicks */
+        z-index: 10000; /* above overlays */
+        animation: fall linear forwards;
+        will-change: transform;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translate3d(0, 0, 0) rotate(0deg);
+        }
+        100% {
+          transform: translate3d(0, 110vh, 0) rotate(360deg);
+        }
+      }
+
+      /* Optional: respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        .falling-leaf {
+          animation: none;
+          display: none;
+        }
+      }
     </style>
   </head>
   <body class="bg-slate-100 text-gray-800">
@@ -2146,6 +2175,31 @@
               submitBtn.disabled = false;
             });
         });
+
+      // Falling Leaves Animation - JavaScript
+      function createLeaf() {
+        const leaf = document.createElement("div");
+        leaf.className = "falling-leaf";
+
+        // Randomize leaf types for variety
+        const leaves = ["🍂", "🍁", "🍃"];
+        leaf.innerHTML = leaves[Math.floor(Math.random() * leaves.length)];
+
+        // Random horizontal start position
+        leaf.style.left = Math.random() * 100 + "vw";
+        // Random size
+        leaf.style.fontSize = Math.random() * 20 + 16 + "px";
+        // Random animation duration
+        leaf.style.animationDuration = Math.random() * 5 + 5 + "s";
+
+        document.body.appendChild(leaf);
+
+        // Remove leaf after animation completes
+        setTimeout(() => leaf.remove(), 10000);
+      }
+
+      // Generate falling leaves continuously
+      setInterval(createLeaf, 800);
     </script>
   </body>
 </html>
